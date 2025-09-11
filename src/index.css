@@ -349,6 +349,17 @@ body {
   text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
 }
 
+/* Regal theme link header styling for better contrast */
+.regal .text-neutral-800 {
+  color: #fef3c7;
+  text-shadow: 0 0 8px rgba(254, 243, 199, 0.4);
+}
+
+.regal .group-hover\/link\:text-primary-600:hover {
+  color: #fbbf24 !important;
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
+}
+
 /* Hide dreamy cloud elements by default, show only in dreamy theme */
 .bg-dreamy-500\/80,
 .bg-dreamySecondary-500\/75,
