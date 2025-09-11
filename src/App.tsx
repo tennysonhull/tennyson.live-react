@@ -2,6 +2,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './contexts/ThemeContext';
 import ProfileSection from './components/ProfileSection';
 import Storyboard from './components/Storyboard';
+import ContactForm from './components/ContactForm';
 import ThemeToggle from './components/ThemeToggle';
 import GoogleAnalytics from './components/GoogleAnalytics';
 
@@ -31,6 +32,9 @@ function App() {
             <ThemeToggle />
             <ProfileSection />
             <Storyboard />
+            <section id="contact-form" className="py-16 px-4">
+              <ContactForm />
+            </section>
           </div>
 
           {/* Google Analytics */}

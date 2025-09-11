@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { animated, useTrail } from '@react-spring/web';
-import { ExternalLink, Image, Link2, List, Plus, X } from 'lucide-react';
+import { ExternalLink, Image, Link2, Heart, ArrowRight } from 'lucide-react';
 
 interface StoryBlock {
   id: string;
@@ -16,15 +16,9 @@ interface StoryBlock {
 }
 
 const Storyboard: React.FC = () => {
-  const [blocks, setBlocks] = useState<StoryBlock[]>([
+  const blocks: StoryBlock[] = [
     {
       id: '1',
-      type: 'text',
-      title: 'Welcome to My Digital Space',
-      content: 'This is where creativity meets technology. I believe in building experiences that not only function beautifully but also tell a story.',
-    },
-    {
-      id: '2',
       type: 'links',
       title: 'Featured Projects',
       content: 'Explore some of my recent work and collaborations.',
@@ -38,145 +32,104 @@ const Storyboard: React.FC = () => {
           title: 'Open Source Contributions',
           url: 'https://github.com/tennysonhull',
           description: 'Contributing to the developer community'
+        },
+        {
+          title: 'Creative Experiments',
+          url: 'https://github.com/tennysonhull',
+          description: 'Exploring new technologies and design patterns'
         }
       ]
+    },
+    {
+      id: '2',
+      type: 'text',
+      title: 'Community Empowerment',
+      content: 'I believe in the power of technology to bring people together and create positive change. Through open source contributions, mentorship, and collaborative projects, I work to empower others in their creative and technical journeys.',
     }
-  ]);
-
-  const [isAddingBlock, setIsAddingBlock] = useState(false);
+  ];
 
   const trail = useTrail(blocks.length, {
     from: { opacity: 0, transform: 'translateY(30px)' },
     to: { opacity: 1, transform: 'translateY(0px)' },
-    delay: 1000,
+    delay: 200,
   });
 
-  const addBlock = (type: StoryBlock['type']) => {
-    const newBlock: StoryBlock = {
-      id: Date.now().toString(),
-      type,
-      title: '',
-      content: '',
-      links: type === 'links' ? [] : undefined,
-    };
-    setBlocks([...blocks, newBlock]);
-    setIsAddingBlock(false);
-  };
-
-  const removeBlock = (id: string) => {
-    setBlocks(blocks.filter(block => block.id !== id));
-  };
-
-  // const updateBlock = (id: string, updates: Partial<StoryBlock>) => {
-  //   setBlocks(blocks.map(block => 
-  //     block.id === id ? { ...block, ...updates } : block
-  //   ));
-  // };
-
   const renderBlock = (block: StoryBlock, index: number) => {
-    const springProps = trail[index];
+    const animation = trail[index];
 
     switch (block.type) {
       case 'text':
         return (
-          <animated.div key={block.id} style={springProps} className="group">
-            <div className="glass-effect rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-display font-semibold gradient-text">
-                  {block.title || 'Untitled Block'}
-                </h3>
-                <button
-                  onClick={() => removeBlock(block.id)}
-                  className="opacity-0 group-hover:opacity-100 p-1 rounded-full hover:bg-red-100  transition-all"
-                >
-                  <X size={16} className="text-red-500" />
-                </button>
-              </div>
-              <p className="text-neutral-600  font-elegant leading-relaxed">
-                {block.content || 'Click to edit this text block...'}
-              </p>
-            </div>
+          <animated.div key={block.id} style={animation} className="glass-effect rounded-2xl p-6">
+            <h3 className="text-xl font-display font-semibold gradient-text mb-3">
+              {block.title}
+            </h3>
+            <p className="text-neutral-600 font-elegant leading-relaxed">
+              {block.content}
+            </p>
           </animated.div>
         );
 
       case 'image':
         return (
-          <animated.div key={block.id} style={springProps} className="group">
-            <div className="glass-effect rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-display font-semibold gradient-text">
-                  {block.title || 'Image Block'}
-                </h3>
-                <button
-                  onClick={() => removeBlock(block.id)}
-                  className="opacity-0 group-hover:opacity-100 p-1 rounded-full hover:bg-red-100  transition-all"
-                >
-                  <X size={16} className="text-red-500" />
-                </button>
-              </div>
-              <div className="aspect-video bg-gradient-to-br from-primary-100 to-secondary-100  rounded-xl flex items-center justify-center">
-                {block.imageUrl ? (
-                  <img src={block.imageUrl} alt={block.title} className="w-full h-full object-cover rounded-xl" />
-                ) : (
-                  <div className="text-center">
-                    <Image size={48} className="mx-auto text-neutral-400 mb-2" />
-                    <p className="text-neutral-500  font-elegant">
-                      Add an image URL to display here
-                    </p>
-                  </div>
-                )}
-              </div>
+          <animated.div key={block.id} style={animation} className="glass-effect rounded-2xl p-6">
+            <h3 className="text-xl font-display font-semibold gradient-text mb-4">
+              {block.title}
+            </h3>
+            <div className="aspect-video bg-gradient-to-br from-primary-100 to-secondary-100 rounded-xl flex items-center justify-center">
+              {block.imageUrl ? (
+                <img 
+                  src={block.imageUrl} 
+                  alt={block.title}
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              ) : (
+                <div className="text-center">
+                  <Image size={48} className="text-neutral-400 mx-auto mb-2" />
+                  <p className="text-neutral-500 font-elegant">
+                    Image placeholder
+                  </p>
+                </div>
+              )}
             </div>
+            <p className="text-neutral-500 font-elegant mt-4">
+              {block.content}
+            </p>
           </animated.div>
         );
 
       case 'links':
         return (
-          <animated.div key={block.id} style={springProps} className="group">
-            <div className="glass-effect rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300">
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-display font-semibold gradient-text">
-                  {block.title || 'Links Block'}
-                </h3>
-                <button
-                  onClick={() => removeBlock(block.id)}
-                  className="opacity-0 group-hover:opacity-100 p-1 rounded-full hover:bg-red-100  transition-all"
+          <animated.div key={block.id} style={animation} className="glass-effect rounded-2xl p-6">
+            <h3 className="text-xl font-display font-semibold gradient-text mb-4">
+              {block.title}
+            </h3>
+            <p className="text-neutral-500 font-elegant mb-4">
+              {block.content}
+            </p>
+            <div className="space-y-3">
+              {block.links?.map((link, linkIndex) => (
+                <a
+                  key={linkIndex}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group/link"
                 >
-                  <X size={16} className="text-red-500" />
-                </button>
-              </div>
-              <div className="space-y-3">
-                {block.links?.map((link, linkIndex) => (
-                  <a
-                    key={linkIndex}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10  transition-all duration-200 group/link"
-                  >
-                    <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600  transition-colors" />
-                    <div className="flex-1">
-                      <h4 className="font-elegant font-medium text-neutral-800  group-hover/link:text-primary-600  transition-colors">
-                        {link.title}
-                      </h4>
-                      {link.description && (
-                        <p className="text-sm text-neutral-500 ">
-                          {link.description}
-                        </p>
-                      )}
-                    </div>
-                    <ExternalLink size={14} className="text-neutral-400 group-hover/link:text-primary-500 transition-colors" />
-                  </a>
-                ))}
-                {(!block.links || block.links.length === 0) && (
-                  <div className="text-center py-8">
-                    <List size={48} className="mx-auto text-neutral-400 mb-2" />
-                    <p className="text-neutral-500  font-elegant">
-                      Add links to external resources, projects, or profiles
-                    </p>
+                  <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600 transition-colors" />
+                  <div className="flex-1">
+                    <h4 className="font-elegant font-medium text-neutral-800 group-hover/link:text-primary-600 transition-colors">
+                      {link.title}
+                    </h4>
+                    {link.description && (
+                      <p className="text-sm text-neutral-500">
+                        {link.description}
+                      </p>
+                    )}
                   </div>
-                )}
-              </div>
+                  <ExternalLink size={14} className="text-neutral-400 group-hover/link:text-primary-500 transition-colors" />
+                </a>
+              ))}
             </div>
           </animated.div>
         );
@@ -193,64 +146,53 @@ const Storyboard: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-display font-bold gradient-text mb-4">
             My Story
           </h2>
-          <p className="text-lg text-neutral-600  font-elegant max-w-2xl mx-auto">
-            A collection of thoughts, projects, and experiences that define my journey
+          <p className="text-lg text-neutral-600 font-elegant max-w-2xl mx-auto">
+            A collection of thoughts, projects, and experiences that shape my journey as a creative developer.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {blocks.map((block, index) => renderBlock(block, index))}
+        <div className="grid gap-8 lg:grid-cols-3">
+          {/* Featured Projects - Left Panel */}
+          {renderBlock(blocks[0], 0)}
           
-          {/* Add Block Button */}
-          <div className="relative">
-            {isAddingBlock ? (
-              <div className="glass-effect rounded-2xl p-6 space-y-3">
-                <h3 className="text-lg font-display font-semibold gradient-text mb-4">
-                  Add New Block
-                </h3>
-                <button
-                  onClick={() => addBlock('text')}
-                  className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10  transition-all duration-200"
-                >
-                  <span className="text-2xl">📝</span>
-                  <span className="font-elegant">Text Block</span>
-                </button>
-                <button
-                  onClick={() => addBlock('image')}
-                  className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10  transition-all duration-200"
-                >
-                  <span className="text-2xl">🖼️</span>
-                  <span className="font-elegant">Image Block</span>
-                </button>
-                <button
-                  onClick={() => addBlock('links')}
-                  className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10  transition-all duration-200"
-                >
-                  <span className="text-2xl">🔗</span>
-                  <span className="font-elegant">Links Block</span>
-                </button>
-                <button
-                  onClick={() => setIsAddingBlock(false)}
-                  className="w-full flex items-center justify-center space-x-2 p-2 rounded-lg hover:bg-red-100  transition-all duration-200"
-                >
-                  <X size={16} className="text-red-500" />
-                  <span className="font-elegant text-red-500">Cancel</span>
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={() => setIsAddingBlock(true)}
-                className="w-full h-48 glass-effect rounded-2xl flex flex-col items-center justify-center space-y-3 hover:scale-[1.02] transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary-100  flex items-center justify-center group-hover:bg-primary-200  transition-colors">
-                  <Plus size={24} className="text-primary-600 " />
-                </div>
-                <span className="font-elegant font-medium text-neutral-600 ">
-                  Add New Block
-                </span>
-              </button>
-            )}
-          </div>
+          {/* Support Panel - Middle */}
+          <animated.div 
+            className="glass-effect rounded-2xl p-6 flex flex-col items-center justify-center text-center space-y-4 hover:scale-[1.02] transition-all duration-300 group"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255, 182, 193, 0.1) 0%, rgba(255, 218, 185, 0.1) 50%, rgba(255, 239, 213, 0.1) 100%)',
+              border: '1px solid rgba(255, 182, 193, 0.2)'
+            }}
+          >
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 via-rose-400 to-orange-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <Heart size={24} className="text-white" />
+            </div>
+            
+            <div className="space-y-2">
+              <h3 className="text-xl font-display font-semibold gradient-text">
+                Support My Work
+              </h3>
+              <p className="text-neutral-600 font-elegant text-sm leading-relaxed">
+                If you feel called to support my creative journey and help me continue building amazing experiences, I would be deeply grateful.
+              </p>
+            </div>
+            
+            <a
+              href="https://tennyson.live/accelerate"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/btn flex items-center space-x-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white font-elegant font-medium hover:from-pink-600 hover:to-orange-600 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              <span>Accelerate My Journey</span>
+              <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+            </a>
+            
+            <p className="text-xs text-neutral-500 font-elegant">
+              Every contribution makes a difference
+            </p>
+          </animated.div>
+          
+          {/* Community Empowerment - Right Panel */}
+          {renderBlock(blocks[1], 1)}
         </div>
       </div>
     </section>

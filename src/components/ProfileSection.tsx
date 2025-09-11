@@ -16,24 +16,36 @@ const ProfileSection: React.FC = () => {
     delay: 600,
   });
 
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact-form');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const socialLinks = [
     {
       name: 'GitHub',
       icon: Github,
       url: 'https://github.com/tennysonhull',
-      color: 'hover:text-primary-600'
+      color: 'hover:text-primary-600',
+      isExternal: true
     },
     {
       name: 'LinkedIn',
       icon: Linkedin,
       url: 'https://linkedin.com/in/tennysonhull',
-      color: 'hover:text-secondary-600'
+      color: 'hover:text-secondary-600',
+      isExternal: true
     },
     {
       name: 'Email',
       icon: Mail,
-      url: 'mailto:hello@tennyson.live',
-      color: 'hover:text-accent-600'
+      url: '#contact',
+      color: 'hover:text-accent-600',
+      isExternal: false,
+      onClick: handleEmailClick
     }
   ];
 
@@ -78,20 +90,36 @@ const ProfileSection: React.FC = () => {
           <animated.div style={textAnimation} className="flex justify-center space-x-6 mt-8">
             {socialLinks.map((link, index) => {
               const IconComponent = link.icon;
-              return (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group flex items-center space-x-2 px-4 py-2 rounded-full glass-effect transition-all duration-300 ${link.color} hover:scale-105`}
-                  style={{ animationDelay: `${800 + index * 100}ms` }}
-                >
-                  <IconComponent size={20} />
-                  <span className="font-elegant font-medium">{link.name}</span>
-                  <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-              );
+              
+              if (link.isExternal) {
+                return (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group flex items-center space-x-2 px-4 py-2 rounded-full glass-effect transition-all duration-300 ${link.color} hover:scale-105`}
+                    style={{ animationDelay: `${800 + index * 100}ms` }}
+                  >
+                    <IconComponent size={20} />
+                    <span className="font-elegant font-medium">{link.name}</span>
+                    <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                );
+              } else {
+                return (
+                  <button
+                    key={link.name}
+                    onClick={link.onClick}
+                    className={`group flex items-center space-x-2 px-4 py-2 rounded-full glass-effect transition-all duration-300 ${link.color} hover:scale-105`}
+                    style={{ animationDelay: `${800 + index * 100}ms` }}
+                  >
+                    <IconComponent size={20} />
+                    <span className="font-elegant font-medium">{link.name}</span>
+                    <Mail size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                );
+              }
             })}
           </animated.div>
         </animated.div>

@@ -21,7 +21,7 @@
   
   /* Regal theme styles */
   .regal body {
-    @apply bg-gradient-to-br from-regalDark-100 via-regal-700 to-regalDark-200;
+    @apply bg-gradient-to-br from-neutral-800 via-regal-700 to-neutral-700;
     @apply text-regal-50;
   }
   
@@ -72,23 +72,23 @@
   
   /* Dark theme text overrides with glow */
   .dark .text-neutral-600 {
-    color: #e5e5e5;
-    text-shadow: 0 0 8px rgba(229, 229, 229, 0.4);
+    color: #f8fafc;
+    text-shadow: 0 0 8px rgba(248, 250, 252, 0.4);
   }
   
   .dark .text-neutral-500 {
-    color: #d4d4d4;
-    text-shadow: 0 0 6px rgba(212, 212, 212, 0.3);
+    color: #f1f5f9;
+    text-shadow: 0 0 6px rgba(241, 245, 249, 0.3);
   }
   
   .dark .text-neutral-200 {
-    color: #f5f5f5;
-    text-shadow: 0 0 8px rgba(245, 245, 245, 0.4);
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
   }
   
   .dark .text-neutral-300 {
-    color: #e5e5e5;
-    text-shadow: 0 0 6px rgba(229, 229, 229, 0.3);
+    color: #f8fafc;
+    text-shadow: 0 0 6px rgba(248, 250, 252, 0.3);
   }
   
   .dark .text-primary-600 {
@@ -103,7 +103,7 @@
   
   /* Regal theme components */
   .regal .glass-effect {
-    @apply bg-regalDark-50/40 backdrop-blur-md border border-regal-300/40;
+    @apply bg-neutral-800/40 backdrop-blur-md border border-regal-300/40;
   }
   
   .regal .gradient-text {
@@ -268,6 +268,52 @@
   
   .dreamy .to-accent-600 {
     @apply to-dreamyPurple-400;
+  }
+  
+  /* Contact form styling using theme variables */
+  .dark input,
+  .dark textarea {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: #4b5563;
+    color: #f8fafc;
+  }
+  
+  .dark input:focus,
+  .dark textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+  }
+  
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #9ca3af;
+  }
+  
+  .regal input,
+  .regal textarea {
+    background-color: rgba(45, 45, 45, 0.3);
+    border-color: #b45309;
+    color: #fef3c7;
+  }
+  
+  .regal input:focus,
+  .regal textarea:focus {
+    border-color: #fbbf24;
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+  }
+  
+  .regal input::placeholder,
+  .regal textarea::placeholder {
+    color: #fcd34d;
+  }
+  
+  /* Contact form label styling using theme variables */
+  .dark .text-neutral-700 {
+    color: #e5e5e5;
+  }
+  
+  .regal .text-neutral-700 {
+    color: #fde68a;
   }
   
   /* Hide dreamy cloud elements by default, show only in dreamy theme */

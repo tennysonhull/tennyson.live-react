@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -132,6 +132,37 @@ module.exports = {
           dark: '#0c4a6e',
           regal: '#a16207',
           dreamy: '#fff8f0',
+        },
+        // Theme-specific form colors
+        form: {
+          light: {
+            label: '#374151', // neutral-700
+            input: '#ffffff',
+            border: '#d1d5db', // neutral-300
+            focus: '#3b82f6', // primary-500
+            placeholder: '#9ca3af', // neutral-400
+          },
+          dark: {
+            label: '#e5e5e5', // neutral-200
+            input: 'rgba(0, 0, 0, 0.2)',
+            border: '#4b5563', // neutral-600
+            focus: '#60a5fa', // primary-400
+            placeholder: '#9ca3af', // neutral-400
+          },
+          regal: {
+            label: '#fde68a', // regal-200
+            input: 'rgba(45, 45, 45, 0.3)',
+            border: '#b45309', // regal-700
+            focus: '#fbbf24', // regal-400
+            placeholder: '#fcd34d', // regal-300
+          },
+          dreamy: {
+            label: '#1e293b', // slate-800
+            input: '#ffffff',
+            border: '#d1d5db', // neutral-300
+            focus: '#3b82f6', // primary-500
+            placeholder: '#9ca3af', // neutral-400
+          }
         }
       },
       fontFamily: {
