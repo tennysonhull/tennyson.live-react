@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
 @layer base {
   body {
@@ -231,19 +230,19 @@
   }
   
   .dreamy .bg-secondary-200\/20 {
-    @apply bg-dreamyBlue-200/20;
+    @apply bg-dreamySecondary-200/20;
   }
   
   .dreamy .bg-secondary-800\/20 {
-    @apply bg-dreamyBlue-200/20;
+    @apply bg-dreamySecondary-200/20;
   }
   
   .dreamy .bg-accent-200\/10 {
-    @apply bg-dreamyPurple-200/10;
+    @apply bg-dreamyAccent-200/10;
   }
   
   .dreamy .bg-accent-800\/10 {
-    @apply bg-dreamyPurple-200/10;
+    @apply bg-dreamyAccent-200/10;
   }
   
   .dreamy .from-primary-400 {
@@ -251,11 +250,11 @@
   }
   
   .dreamy .via-secondary-400 {
-    @apply via-dreamyBlue-400;
+    @apply via-dreamySecondary-400;
   }
   
   .dreamy .to-accent-400 {
-    @apply to-dreamyPurple-400;
+    @apply to-dreamyAccent-400;
   }
   
   .dreamy .from-primary-600 {
@@ -263,11 +262,11 @@
   }
   
   .dreamy .via-secondary-600 {
-    @apply via-dreamyBlue-400;
+    @apply via-dreamySecondary-400;
   }
   
   .dreamy .to-accent-600 {
-    @apply to-dreamyPurple-400;
+    @apply to-dreamyAccent-400;
   }
   
   /* Contact form styling using theme variables */
@@ -318,21 +317,21 @@
   
   /* Hide dreamy cloud elements by default, show only in dreamy theme */
   .bg-dreamy-500\/80,
-  .bg-dreamyBlue-500\/75,
-  .bg-dreamyPurple-500\/70,
+  .bg-dreamySecondary-500\/75,
+  .bg-dreamyAccent-500\/70,
   .bg-dreamy-600\/75,
-  .bg-dreamyBlue-600\/80,
-  .bg-dreamyPurple-600\/65,
+  .bg-dreamySecondary-600\/80,
+  .bg-dreamyAccent-600\/65,
   .bg-dreamy-700\/70 {
     @apply hidden;
   }
   
   .dreamy .bg-dreamy-500\/80,
-  .dreamy .bg-dreamyBlue-500\/75,
-  .dreamy .bg-dreamyPurple-500\/70,
+  .dreamy .bg-dreamySecondary-500\/75,
+  .dreamy .bg-dreamyAccent-500\/70,
   .dreamy .bg-dreamy-600\/75,
-  .dreamy .bg-dreamyBlue-600\/80,
-  .dreamy .bg-dreamyPurple-600\/65,
+  .dreamy .bg-dreamySecondary-600\/80,
+  .dreamy .bg-dreamyAccent-600\/65,
   .dreamy .bg-dreamy-700\/70 {
     @apply block;
   }

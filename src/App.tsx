@@ -19,11 +19,11 @@ function App() {
             
             {/* Dreamy theme cloud effects */}
             <div className="absolute top-20 left-20 w-64 h-64 bg-dreamy-500/80 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-40 right-32 w-48 h-48 bg-dreamyBlue-500/75 rounded-full blur-2xl animate-float" style={{ animationDelay: '3s' }}></div>
-            <div className="absolute bottom-32 left-1/3 w-72 h-72 bg-dreamyPurple-500/70 rounded-full blur-3xl animate-float" style={{ animationDelay: '5s' }}></div>
+            <div className="absolute top-40 right-32 w-48 h-48 bg-dreamySecondary-500/75 rounded-full blur-2xl animate-float" style={{ animationDelay: '3s' }}></div>
+            <div className="absolute bottom-32 left-1/3 w-72 h-72 bg-dreamyAccent-500/70 rounded-full blur-3xl animate-float" style={{ animationDelay: '5s' }}></div>
             <div className="absolute top-1/3 right-1/4 w-56 h-56 bg-dreamy-600/75 rounded-full blur-2xl animate-float" style={{ animationDelay: '2.5s' }}></div>
-            <div className="absolute bottom-20 right-20 w-40 h-40 bg-dreamyBlue-600/80 rounded-full blur-xl animate-float" style={{ animationDelay: '4.5s' }}></div>
-            <div className="absolute top-1/2 left-1/4 w-52 h-52 bg-dreamyPurple-600/65 rounded-full blur-2xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+            <div className="absolute bottom-20 right-20 w-40 h-40 bg-dreamySecondary-600/80 rounded-full blur-xl animate-float" style={{ animationDelay: '4.5s' }}></div>
+            <div className="absolute top-1/2 left-1/4 w-52 h-52 bg-dreamyAccent-600/65 rounded-full blur-2xl animate-float" style={{ animationDelay: '1.5s' }}></div>
             <div className="absolute bottom-1/3 right-1/3 w-44 h-44 bg-dreamy-700/70 rounded-full blur-xl animate-float" style={{ animationDelay: '3.5s' }}></div>
           </div>
 

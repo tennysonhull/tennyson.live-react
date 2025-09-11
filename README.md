@@ -1,12 +1,12 @@
 # Tennyson Live - Personal Profile Site
 
-An elegant, regal, and flowy personal profile website built with React, TypeScript, and Tailwind CSS. Features a dreamy blue/green and peachy color scheme with smooth animations and a customizable storyboard system.
+An elegant, regal, and flowy personal profile website built with React, TypeScript, and Tailwind CSS v4. Features a dreamy blue/green and peachy color scheme with smooth animations and a modern theme system.
 
 ## ✨ Features
 
 - **Elegant Design**: Dreamy blue/green and peachy color scheme with regal typography
 - **Theme System**: Light, dark, dreamy, and regal themes with smooth transitions
-- **Interactive Storyboard**: Add text blocks, images, and link collections
+- **Static Storyboard**: Featured projects, community empowerment, and support sections
 - **Smooth Animations**: React Spring animations throughout the site
 - **Responsive Design**: Beautiful on all devices
 - **Google Analytics**: Built-in analytics integration
@@ -169,6 +169,7 @@ src/
 - **[Contributing](docs/CONTRIBUTING.md)** - Simple guide for forking and contributing
 - **[Roadmap](docs/ROADMAP.md)** - Future development plans and milestones
 - **[Changelog](docs/CHANGELOG.md)** - Version history and release notes
+- **[Tailwind v4 Migration](docs/V4_MIGRATION_COMPLETE.md)** - Complete migration documentation
 
 ### Quick Links
 - **[Getting Started](#-quick-start)** - Setup and installation

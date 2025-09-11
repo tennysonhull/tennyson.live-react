@@ -70,18 +70,6 @@ export default {
           800: '#92400e',
           900: '#78350f',
         },
-        regalDark: {
-          50: '#2d2d2d',
-          100: '#3a3a3a',
-          200: '#4a4a4a',
-          300: '#5a5a5a',
-          400: '#6a6a6a',
-          500: '#7a7a7a',
-          600: '#8a8a8a',
-          700: '#9a9a9a',
-          800: '#aaaaaa',
-          900: '#bababa',
-        },
         // Dreamy theme - Sunset/marmalade/blood-orange with high saturation
         dreamy: {
           50: '#fff8f0',
@@ -95,7 +83,8 @@ export default {
           800: '#b31a00',
           900: '#990000',
         },
-        dreamyBlue: {
+        // Dreamy theme secondary colors (consolidated from dreamyBlue and dreamyPurple)
+        dreamySecondary: {
           50: '#f0f8ff',
           100: '#e0f0ff',
           200: '#c1e1ff',
@@ -107,7 +96,7 @@ export default {
           800: '#004db3',
           900: '#004099',
         },
-        dreamyPurple: {
+        dreamyAccent: {
           50: '#f8f0ff',
           100: '#f0e0ff',
           200: '#e1c1ff',
