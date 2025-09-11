@@ -154,14 +154,6 @@ const Storyboard: React.FC = () => {
   return (
     <section className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-display font-bold gradient-text mb-4">
-            My Story
-          </h2>
-          <p className="text-lg text-neutral-600 font-elegant max-w-2xl mx-auto">
-            A collection of thoughts, projects, and experiences that shape my journey as a creative developer.
-          </p>
-        </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Featured Projects - Left Panel */}
