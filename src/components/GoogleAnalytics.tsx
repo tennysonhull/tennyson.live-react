@@ -15,6 +15,12 @@ interface GoogleAnalyticsProps {
 
 const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ trackingId }) => {
   useEffect(() => {
+    // Disable Google Analytics in development mode
+    if (import.meta.env.DEV) {
+      console.log('Google Analytics disabled in development mode');
+      return;
+    }
+
     if (!trackingId) {
       console.warn('Google Analytics tracking ID not provided. Set VITE_GA_TRACKING_ID in your environment variables.');
       return;
@@ -56,7 +62,8 @@ const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ trackingId }) => {
     };
   }, [trackingId]);
 
-  if (!trackingId) {
+  // Don't render Google Analytics in development mode
+  if (import.meta.env.DEV || !trackingId) {
     return null;
   }
 

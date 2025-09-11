@@ -4,10 +4,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-gray-200 dark:border-gray-700;
-  }
-  
   body {
     @apply bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 dark:from-neutral-900 dark:via-primary-900 dark:to-secondary-900;
     @apply text-neutral-900 dark:text-neutral-100;
