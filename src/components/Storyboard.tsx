@@ -130,7 +130,7 @@ const Storyboard: React.FC = () => {
                 >
                   <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600 transition-colors" />
                   <div className="flex-1">
-                    <h4 className="font-elegant font-medium text-neutral-800 group-hover/link:text-primary-600 transition-colors">
+                    <h4 className="font-elegant font-medium text-neutral-700 group-hover/link:text-primary-600 transition-colors">
                       {link.title}
                     </h4>
                     {link.description && (
