@@ -52,8 +52,8 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       const colors = {
         light: '#f0f9ff',
         dark: '#0c4a6e',
-        dreamy: '#e0f2fe',
-        regal: '#075985'
+        dreamy: '#fdf2f8',
+        regal: '#a16207'
       };
       metaThemeColor.setAttribute('content', colors[theme]);
     }

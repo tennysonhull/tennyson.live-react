@@ -12,6 +12,18 @@
     @apply transition-colors duration-300;
   }
   
+  /* Regal theme styles */
+  .regal body {
+    @apply bg-gradient-to-br from-regalDark-50 via-regal-800 to-regalDark-100;
+    @apply text-regal-100;
+  }
+  
+  /* Dreamy theme styles */
+  .dreamy body {
+    @apply bg-gradient-to-br from-dreamy-50 via-dreamyBlue-50 to-dreamyPurple-50;
+    @apply text-dreamy-800;
+  }
+  
   html {
     scroll-behavior: smooth;
   }
@@ -32,5 +44,23 @@
   
   .glow-effect {
     animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  /* Regal theme components */
+  .regal .glass-effect {
+    @apply bg-regal-900/20 backdrop-blur-md border border-regal-400/30;
+  }
+  
+  .regal .gradient-text {
+    @apply bg-gradient-to-r from-regal-300 via-regal-400 to-regal-500 bg-clip-text text-transparent;
+  }
+  
+  /* Dreamy theme components */
+  .dreamy .glass-effect {
+    @apply bg-white/20 backdrop-blur-md border border-dreamy-200/40;
+  }
+  
+  .dreamy .gradient-text {
+    @apply bg-gradient-to-r from-dreamy-500 via-dreamyBlue-500 to-dreamyPurple-500 bg-clip-text text-transparent;
   }
 }

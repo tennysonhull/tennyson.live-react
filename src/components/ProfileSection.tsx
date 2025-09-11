@@ -42,19 +42,21 @@ const ProfileSection: React.FC = () => {
       <div className="max-w-4xl mx-auto text-center">
         <animated.div style={imageAnimation} className="mb-8">
           <div className="relative inline-block">
-            {/* Profile Picture Placeholder */}
-            <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-primary-400 via-secondary-400 to-accent-400 p-1 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-800 dark:to-secondary-800 flex items-center justify-center">
-                <div className="text-6xl font-display font-bold gradient-text">
-                  TH
-                </div>
+            {/* Profile Picture */}
+            <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-primary-400 via-secondary-400 to-accent-400 dark:from-primary-600 dark:via-secondary-600 dark:to-accent-600 regal:from-regal-400 regal:via-regal-500 regal:to-regal-600 dreamy:from-dreamy-400 dreamy:via-dreamyBlue-400 dreamy:to-dreamyPurple-400 p-1 shadow-2xl">
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <img 
+                  src="/images/tennyson.flow.jpg" 
+                  alt="Tennyson Hull" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             
             {/* Floating decorative elements around profile */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent-400/30 rounded-full animate-float"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary-400/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-secondary-400/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent-400/30 dark:bg-accent-500/30 regal:bg-regal-400/30 dreamy:bg-dreamy-400/30 rounded-full animate-float"></div>
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary-400/30 dark:bg-primary-500/30 regal:bg-regal-500/30 dreamy:bg-dreamyBlue-400/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-secondary-400/30 dark:bg-secondary-500/30 regal:bg-regal-600/30 dreamy:bg-dreamyPurple-400/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
           </div>
         </animated.div>
 
