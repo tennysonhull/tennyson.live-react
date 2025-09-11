@@ -194,18 +194,6 @@ const ContactForm: React.FC = () => {
             </span>
           </button>
         </form>
-
-        <div className="mt-6 text-center">
-          <p className="text-sm text-neutral-500 font-elegant">
-            Or reach out directly at{' '}
-            <a 
-              href="mailto:hello@tennyson.live" 
-              className="text-primary-600 hover:text-primary-700 transition-colors"
-            >
-              hello@tennyson.live
-            </a>
-          </p>
-        </div>
       </div>
     </animated.div>
   );
