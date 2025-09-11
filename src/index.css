@@ -323,6 +323,32 @@ body {
   color: #fde68a;
 }
 
+/* Regal theme neutral text overrides for better contrast */
+.regal .text-neutral-600 {
+  color: #fef3c7;
+  text-shadow: 0 0 8px rgba(254, 243, 199, 0.4);
+}
+
+.regal .text-neutral-500 {
+  color: #fde68a;
+  text-shadow: 0 0 8px rgba(253, 230, 138, 0.4);
+}
+
+.regal .text-neutral-400 {
+  color: #fcd34d;
+  text-shadow: 0 0 8px rgba(252, 211, 77, 0.4);
+}
+
+.regal .text-neutral-300 {
+  color: #fbbf24;
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+}
+
+.regal .text-neutral-200 {
+  color: #f59e0b;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
 /* Hide dreamy cloud elements by default, show only in dreamy theme */
 .bg-dreamy-500\/80,
 .bg-dreamySecondary-500\/75,
