@@ -166,7 +166,7 @@ src/
 ### Core Documentation
 - **[Architecture Guide](docs/ARCHITECTURE.md)** - System architecture and design decisions
 - **[Deployment Guide](docs/DEPLOYMENT.md)** - Multiple deployment strategies and platforms
-- **[Contributing Guide](docs/CONTRIBUTING.md)** - Guidelines for contributors and development workflow
+- **[Contributing](docs/CONTRIBUTING.md)** - Simple guide for forking and contributing
 - **[Roadmap](docs/ROADMAP.md)** - Future development plans and milestones
 - **[Changelog](docs/CHANGELOG.md)** - Version history and release notes
 
