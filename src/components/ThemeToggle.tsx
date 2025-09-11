@@ -53,8 +53,8 @@ const ThemeToggle: React.FC = () => {
           className="group flex items-center space-x-2 px-4 py-2 rounded-full glass-effect hover:scale-105 transition-all duration-300"
           aria-label={`Switch to next theme. Current: ${getThemeLabel()}`}
         >
-          <IconComponent size={18} className="text-neutral-600 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
-          <span className="font-elegant font-medium text-sm text-neutral-600 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+          <IconComponent size={18} className="text-neutral-600 group-hover:text-primary-600 transition-colors" />
+          <span className="font-elegant font-medium text-sm text-neutral-600 group-hover:text-primary-600 transition-colors">
             {getThemeLabel()}
           </span>
         </button>
@@ -79,8 +79,8 @@ const ThemeToggle: React.FC = () => {
                 onClick={() => setTheme(themeOption)}
                 className={`flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-elegant transition-all duration-200 ${
                   isActive 
-                    ? 'glass-effect text-primary-600 dark:text-primary-400' 
-                    : 'text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200'
+                    ? 'glass-effect text-primary-600' 
+                    : 'text-neutral-500 hover:text-neutral-700'
                 }`}
               >
                 <Icon size={14} />

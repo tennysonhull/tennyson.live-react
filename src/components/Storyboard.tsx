@@ -87,12 +87,12 @@ const Storyboard: React.FC = () => {
                 </h3>
                 <button
                   onClick={() => removeBlock(block.id)}
-                  className="opacity-0 group-hover:opacity-100 p-1 rounded-full hover:bg-red-100 dark:hover:bg-red-900/20 transition-all"
+                  className="opacity-0 group-hover:opacity-100 p-1 rounded-full hover:bg-red-100  transition-all"
                 >
                   <X size={16} className="text-red-500" />
                 </button>
               </div>
-              <p className="text-neutral-600 dark:text-neutral-300 font-elegant leading-relaxed">
+              <p className="text-neutral-600  font-elegant leading-relaxed">
                 {block.content || 'Click to edit this text block...'}
               </p>
             </div>
@@ -109,18 +109,18 @@ const Storyboard: React.FC = () => {
                 </h3>
                 <button
                   onClick={() => removeBlock(block.id)}
-                  className="opacity-0 group-hover:opacity-100 p-1 rounded-full hover:bg-red-100 dark:hover:bg-red-900/20 transition-all"
+                  className="opacity-0 group-hover:opacity-100 p-1 rounded-full hover:bg-red-100  transition-all"
                 >
                   <X size={16} className="text-red-500" />
                 </button>
               </div>
-              <div className="aspect-video bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-800 dark:to-secondary-800 rounded-xl flex items-center justify-center">
+              <div className="aspect-video bg-gradient-to-br from-primary-100 to-secondary-100  rounded-xl flex items-center justify-center">
                 {block.imageUrl ? (
                   <img src={block.imageUrl} alt={block.title} className="w-full h-full object-cover rounded-xl" />
                 ) : (
                   <div className="text-center">
                     <Image size={48} className="mx-auto text-neutral-400 mb-2" />
-                    <p className="text-neutral-500 dark:text-neutral-400 font-elegant">
+                    <p className="text-neutral-500  font-elegant">
                       Add an image URL to display here
                     </p>
                   </div>
@@ -140,7 +140,7 @@ const Storyboard: React.FC = () => {
                 </h3>
                 <button
                   onClick={() => removeBlock(block.id)}
-                  className="opacity-0 group-hover:opacity-100 p-1 rounded-full hover:bg-red-100 dark:hover:bg-red-900/20 transition-all"
+                  className="opacity-0 group-hover:opacity-100 p-1 rounded-full hover:bg-red-100  transition-all"
                 >
                   <X size={16} className="text-red-500" />
                 </button>
@@ -152,15 +152,15 @@ const Storyboard: React.FC = () => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-black/10 transition-all duration-200 group/link"
+                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10  transition-all duration-200 group/link"
                   >
-                    <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600 dark:group-hover/link:text-primary-400 transition-colors" />
+                    <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600  transition-colors" />
                     <div className="flex-1">
-                      <h4 className="font-elegant font-medium text-neutral-800 dark:text-neutral-200 group-hover/link:text-primary-600 dark:group-hover/link:text-primary-400 transition-colors">
+                      <h4 className="font-elegant font-medium text-neutral-800  group-hover/link:text-primary-600  transition-colors">
                         {link.title}
                       </h4>
                       {link.description && (
-                        <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                        <p className="text-sm text-neutral-500 ">
                           {link.description}
                         </p>
                       )}
@@ -171,7 +171,7 @@ const Storyboard: React.FC = () => {
                 {(!block.links || block.links.length === 0) && (
                   <div className="text-center py-8">
                     <List size={48} className="mx-auto text-neutral-400 mb-2" />
-                    <p className="text-neutral-500 dark:text-neutral-400 font-elegant">
+                    <p className="text-neutral-500  font-elegant">
                       Add links to external resources, projects, or profiles
                     </p>
                   </div>
@@ -193,7 +193,7 @@ const Storyboard: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-display font-bold gradient-text mb-4">
             My Story
           </h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-300 font-elegant max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-600  font-elegant max-w-2xl mx-auto">
             A collection of thoughts, projects, and experiences that define my journey
           </p>
         </div>
@@ -210,28 +210,28 @@ const Storyboard: React.FC = () => {
                 </h3>
                 <button
                   onClick={() => addBlock('text')}
-                  className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-black/10 transition-all duration-200"
+                  className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10  transition-all duration-200"
                 >
                   <span className="text-2xl">📝</span>
                   <span className="font-elegant">Text Block</span>
                 </button>
                 <button
                   onClick={() => addBlock('image')}
-                  className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-black/10 transition-all duration-200"
+                  className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10  transition-all duration-200"
                 >
                   <span className="text-2xl">🖼️</span>
                   <span className="font-elegant">Image Block</span>
                 </button>
                 <button
                   onClick={() => addBlock('links')}
-                  className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 dark:hover:bg-black/10 transition-all duration-200"
+                  className="w-full flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10  transition-all duration-200"
                 >
                   <span className="text-2xl">🔗</span>
                   <span className="font-elegant">Links Block</span>
                 </button>
                 <button
                   onClick={() => setIsAddingBlock(false)}
-                  className="w-full flex items-center justify-center space-x-2 p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/20 transition-all duration-200"
+                  className="w-full flex items-center justify-center space-x-2 p-2 rounded-lg hover:bg-red-100  transition-all duration-200"
                 >
                   <X size={16} className="text-red-500" />
                   <span className="font-elegant text-red-500">Cancel</span>
@@ -242,10 +242,10 @@ const Storyboard: React.FC = () => {
                 onClick={() => setIsAddingBlock(true)}
                 className="w-full h-48 glass-effect rounded-2xl flex flex-col items-center justify-center space-y-3 hover:scale-[1.02] transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-800 flex items-center justify-center group-hover:bg-primary-200 dark:group-hover:bg-primary-700 transition-colors">
-                  <Plus size={24} className="text-primary-600 dark:text-primary-400" />
+                <div className="w-12 h-12 rounded-full bg-primary-100  flex items-center justify-center group-hover:bg-primary-200  transition-colors">
+                  <Plus size={24} className="text-primary-600 " />
                 </div>
-                <span className="font-elegant font-medium text-neutral-600 dark:text-neutral-300">
+                <span className="font-elegant font-medium text-neutral-600 ">
                   Add New Block
                 </span>
               </button>

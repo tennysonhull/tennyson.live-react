@@ -21,19 +21,19 @@ const ProfileSection: React.FC = () => {
       name: 'GitHub',
       icon: Github,
       url: 'https://github.com/tennysonhull',
-      color: 'hover:text-primary-600 dark:hover:text-primary-400'
+      color: 'hover:text-primary-600'
     },
     {
       name: 'LinkedIn',
       icon: Linkedin,
       url: 'https://linkedin.com/in/tennysonhull',
-      color: 'hover:text-secondary-600 dark:hover:text-secondary-400'
+      color: 'hover:text-secondary-600'
     },
     {
       name: 'Email',
       icon: Mail,
       url: 'mailto:hello@tennyson.live',
-      color: 'hover:text-accent-600 dark:hover:text-accent-400'
+      color: 'hover:text-accent-600'
     }
   ];
 
@@ -43,7 +43,7 @@ const ProfileSection: React.FC = () => {
         <animated.div style={imageAnimation} className="mb-8">
           <div className="relative inline-block">
             {/* Profile Picture */}
-            <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-primary-400 via-secondary-400 to-accent-400 dark:from-primary-600 dark:via-secondary-600 dark:to-accent-600 regal:from-regal-400 regal:via-regal-500 regal:to-regal-600 dreamy:from-dreamy-400 dreamy:via-dreamyBlue-400 dreamy:to-dreamyPurple-400 p-1 shadow-2xl">
+            <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-primary-400 via-secondary-400 to-accent-400 p-1 shadow-2xl">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img 
                   src="/images/tennyson.flow.jpg" 
@@ -54,9 +54,9 @@ const ProfileSection: React.FC = () => {
             </div>
             
             {/* Floating decorative elements around profile */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent-400/30 dark:bg-accent-500/30 regal:bg-regal-400/30 dreamy:bg-dreamy-400/30 rounded-full animate-float"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary-400/30 dark:bg-primary-500/30 regal:bg-regal-500/30 dreamy:bg-dreamyBlue-400/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-secondary-400/30 dark:bg-secondary-500/30 regal:bg-regal-600/30 dreamy:bg-dreamyPurple-400/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent-400/80 rounded-full animate-float"></div>
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary-400/80 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-secondary-400/80 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
           </div>
         </animated.div>
 
@@ -65,11 +65,11 @@ const ProfileSection: React.FC = () => {
             Tennyson Hull
           </h1>
           
-          <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-300 font-elegant font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-neutral-600 font-elegant font-light max-w-2xl mx-auto leading-relaxed">
             Creative Developer & Digital Architect
           </p>
           
-          <p className="text-lg text-neutral-500 dark:text-neutral-400 font-elegant max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-neutral-500 font-elegant max-w-3xl mx-auto leading-relaxed">
             Crafting elegant digital experiences with a passion for innovation and attention to detail. 
             Building the future, one pixel at a time.
           </p>

@@ -5,23 +5,37 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 dark:from-neutral-900 dark:via-primary-900 dark:to-secondary-900;
-    @apply text-neutral-900 dark:text-neutral-100;
+    @apply bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50;
+    @apply text-neutral-900;
     @apply font-elegant;
     @apply min-h-screen;
     @apply transition-colors duration-300;
   }
   
+  /* Dark theme styles */
+  .dark body {
+    @apply bg-gradient-to-br from-neutral-900 via-primary-900 to-secondary-900;
+    @apply text-neutral-100;
+    text-shadow: 0 0 8px rgba(229, 229, 229, 0.3);
+  }
+  
   /* Regal theme styles */
   .regal body {
-    @apply bg-gradient-to-br from-regalDark-50 via-regal-800 to-regalDark-100;
-    @apply text-regal-100;
+    @apply bg-gradient-to-br from-regalDark-100 via-regal-700 to-regalDark-200;
+    @apply text-regal-50;
   }
   
   /* Dreamy theme styles */
   .dreamy body {
-    @apply bg-gradient-to-br from-dreamy-50 via-dreamyBlue-50 to-dreamyPurple-50;
-    @apply text-dreamy-800;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(255, 69, 0, 0.5) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, rgba(26, 140, 255, 0.5) 0%, transparent 60%),
+      radial-gradient(circle at 40% 40%, rgba(140, 26, 255, 0.4) 0%, transparent 60%),
+      radial-gradient(circle at 60% 60%, rgba(255, 140, 0, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 30% 70%, rgba(71, 163, 255, 0.3) 0%, transparent 50%),
+      linear-gradient(180deg, #fff8f0 0%, #ffe8d1 15%, #f0f8ff 30%, #e0f0ff 45%, #f8f0ff 60%, #e1c1ff 75%, #c78cff 90%, #a347ff 100%);
+    @apply text-slate-800;
+    text-shadow: 0 0 10px rgba(30, 41, 59, 0.4);
   }
   
   html {
@@ -31,7 +45,7 @@
 
 @layer components {
   .glass-effect {
-    @apply bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-white/10;
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
   }
   
   .gradient-text {
@@ -46,13 +60,126 @@
     animation: glow 2s ease-in-out infinite alternate;
   }
   
+  /* Dark theme components */
+  .dark .glass-effect {
+    @apply bg-black/10 backdrop-blur-md border border-white/10;
+  }
+  
+  .dark .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent;
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.5), 0 0 30px rgba(34, 197, 94, 0.3);
+  }
+  
+  /* Dark theme text overrides with glow */
+  .dark .text-neutral-600 {
+    color: #e5e5e5;
+    text-shadow: 0 0 8px rgba(229, 229, 229, 0.4);
+  }
+  
+  .dark .text-neutral-500 {
+    color: #d4d4d4;
+    text-shadow: 0 0 6px rgba(212, 212, 212, 0.3);
+  }
+  
+  .dark .text-neutral-200 {
+    color: #f5f5f5;
+    text-shadow: 0 0 8px rgba(245, 245, 245, 0.4);
+  }
+  
+  .dark .text-neutral-300 {
+    color: #e5e5e5;
+    text-shadow: 0 0 6px rgba(229, 229, 229, 0.3);
+  }
+  
+  .dark .text-primary-600 {
+    color: #7dd3fc;
+    text-shadow: 0 0 10px rgba(125, 211, 252, 0.5);
+  }
+  
+  .dark .text-primary-400 {
+    color: #7dd3fc;
+    text-shadow: 0 0 8px rgba(125, 211, 252, 0.4);
+  }
+  
   /* Regal theme components */
   .regal .glass-effect {
-    @apply bg-regal-900/20 backdrop-blur-md border border-regal-400/30;
+    @apply bg-regalDark-50/40 backdrop-blur-md border border-regal-300/40;
   }
   
   .regal .gradient-text {
-    @apply bg-gradient-to-r from-regal-300 via-regal-400 to-regal-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-regal-200 via-regal-300 to-regal-400 bg-clip-text text-transparent;
+  }
+  
+  .regal .text-neutral-600 {
+    @apply text-regal-100;
+  }
+  
+  .regal .text-neutral-500 {
+    @apply text-regal-200;
+  }
+  
+  .regal .text-neutral-200 {
+    @apply text-regal-100;
+  }
+  
+  .regal .text-neutral-300 {
+    @apply text-regal-200;
+  }
+  
+  .regal .text-primary-600 {
+    @apply text-regal-200;
+  }
+  
+  .regal .text-primary-400 {
+    @apply text-regal-200;
+  }
+  
+  .regal .bg-primary-200\/20 {
+    @apply bg-regal-800/20;
+  }
+  
+  .regal .bg-primary-800\/20 {
+    @apply bg-regal-800/20;
+  }
+  
+  .regal .bg-secondary-200\/20 {
+    @apply bg-regal-700/20;
+  }
+  
+  .regal .bg-secondary-800\/20 {
+    @apply bg-regal-700/20;
+  }
+  
+  .regal .bg-accent-200\/10 {
+    @apply bg-regal-600/10;
+  }
+  
+  .regal .bg-accent-800\/10 {
+    @apply bg-regal-600/10;
+  }
+  
+  .regal .from-primary-400 {
+    @apply from-regal-400;
+  }
+  
+  .regal .via-secondary-400 {
+    @apply via-regal-500;
+  }
+  
+  .regal .to-accent-400 {
+    @apply to-regal-600;
+  }
+  
+  .regal .from-primary-600 {
+    @apply from-regal-400;
+  }
+  
+  .regal .via-secondary-600 {
+    @apply via-regal-500;
+  }
+  
+  .regal .to-accent-600 {
+    @apply to-regal-600;
   }
   
   /* Dreamy theme components */
@@ -61,6 +188,106 @@
   }
   
   .dreamy .gradient-text {
-    @apply bg-gradient-to-r from-dreamy-500 via-dreamyBlue-500 to-dreamyPurple-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent;
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.6), 0 0 40px rgba(20, 184, 166, 0.4), 0 0 60px rgba(16, 185, 129, 0.3);
+  }
+  
+  .dreamy .text-neutral-600 {
+    @apply text-slate-800;
+    text-shadow: 0 0 8px rgba(30, 41, 59, 0.4);
+  }
+  
+  .dreamy .text-neutral-500 {
+    @apply text-slate-700;
+    text-shadow: 0 0 6px rgba(30, 41, 59, 0.3);
+  }
+  
+  .dreamy .text-neutral-200 {
+    @apply text-slate-800;
+    text-shadow: 0 0 8px rgba(30, 41, 59, 0.4);
+  }
+  
+  .dreamy .text-neutral-300 {
+    @apply text-slate-700;
+    text-shadow: 0 0 6px rgba(30, 41, 59, 0.3);
+  }
+  
+  .dreamy .text-primary-600 {
+    @apply text-indigo-700;
+    text-shadow: 0 0 8px rgba(67, 56, 202, 0.4);
+  }
+  
+  .dreamy .text-primary-400 {
+    @apply text-indigo-600;
+    text-shadow: 0 0 6px rgba(67, 56, 202, 0.3);
+  }
+  
+  .dreamy .bg-primary-200\/20 {
+    @apply bg-dreamy-200/20;
+  }
+  
+  .dreamy .bg-primary-800\/20 {
+    @apply bg-dreamy-200/20;
+  }
+  
+  .dreamy .bg-secondary-200\/20 {
+    @apply bg-dreamyBlue-200/20;
+  }
+  
+  .dreamy .bg-secondary-800\/20 {
+    @apply bg-dreamyBlue-200/20;
+  }
+  
+  .dreamy .bg-accent-200\/10 {
+    @apply bg-dreamyPurple-200/10;
+  }
+  
+  .dreamy .bg-accent-800\/10 {
+    @apply bg-dreamyPurple-200/10;
+  }
+  
+  .dreamy .from-primary-400 {
+    @apply from-dreamy-400;
+  }
+  
+  .dreamy .via-secondary-400 {
+    @apply via-dreamyBlue-400;
+  }
+  
+  .dreamy .to-accent-400 {
+    @apply to-dreamyPurple-400;
+  }
+  
+  .dreamy .from-primary-600 {
+    @apply from-dreamy-400;
+  }
+  
+  .dreamy .via-secondary-600 {
+    @apply via-dreamyBlue-400;
+  }
+  
+  .dreamy .to-accent-600 {
+    @apply to-dreamyPurple-400;
+  }
+  
+  /* Hide dreamy cloud elements by default, show only in dreamy theme */
+  .bg-dreamy-500\/80,
+  .bg-dreamyBlue-500\/75,
+  .bg-dreamyPurple-500\/70,
+  .bg-dreamy-600\/75,
+  .bg-dreamyBlue-600\/80,
+  .bg-dreamyPurple-600\/65,
+  .bg-dreamy-700\/70 {
+    @apply hidden;
+  }
+  
+  .dreamy .bg-dreamy-500\/80,
+  .dreamy .bg-dreamyBlue-500\/75,
+  .dreamy .bg-dreamyPurple-500\/70,
+  .dreamy .bg-dreamy-600\/75,
+  .dreamy .bg-dreamyBlue-600\/80,
+  .dreamy .bg-dreamyPurple-600\/65,
+  .dreamy .bg-dreamy-700\/70 {
+    @apply block;
   }
 }
