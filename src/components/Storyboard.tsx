@@ -42,9 +42,21 @@ const Storyboard: React.FC = () => {
     },
     {
       id: '2',
-      type: 'text',
+      type: 'links',
       title: 'Community Empowerment',
-      content: 'I believe in the power of technology to bring people together and create positive change. Through open source contributions, mentorship, and collaborative projects, I work to empower others in their creative and technical journeys.',
+      content: 'Connecting with inspiring communities and organizations that are making a positive impact in the world.',
+      links: [
+        {
+          title: 'Flow Life Global',
+          url: 'https://flowlifeglobal.org/',
+          description: 'Post-pandemic spiritual & wellness community creating safe healing spaces'
+        },
+        {
+          title: 'SkyFire Arts',
+          url: 'https://www.skyfirearts.com/',
+          description: 'Transformative entertainment experiences with Tesla coils, fire dancing & LED shows'
+        }
+      ]
     }
   ];
 
