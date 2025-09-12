@@ -122,6 +122,29 @@ module.exports = {
           regal: '#a16207',
           dreamy: '#fff8f0',
         },
+        // Theme-specific notification colors
+        notification: {
+          light: {
+            bg: '#fef3c7', // Light yellow background
+            border: '#f59e0b', // Amber border
+            text: '#92400e', // Dark amber text
+          },
+          dark: {
+            bg: '#1e3a8a', // Dark blue background
+            border: '#3b82f6', // Blue border
+            text: '#dbeafe', // Light blue text
+          },
+          regal: {
+            bg: '#fef3c7', // Light gold background
+            border: '#f59e0b', // Gold border
+            text: '#92400e', // Dark gold text
+          },
+          dreamy: {
+            bg: '#fff8f0', // Light orange background
+            border: '#ff6900', // Orange border
+            text: '#cc3300', // Dark orange text
+          },
+        },
         // Theme-specific form colors
         form: {
           light: {

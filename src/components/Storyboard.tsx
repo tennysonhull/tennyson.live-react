@@ -2,6 +2,7 @@ import React from 'react';
 import { animated, useTrail } from '@react-spring/web';
 import { ExternalLink, Image, Link2, Heart, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { usePageTransition } from '../contexts/PageTransitionContext';
 
 interface StoryBlock {
   id: string;
@@ -17,6 +18,7 @@ interface StoryBlock {
 }
 
 const Storyboard: React.FC = () => {
+  const { setDirection } = usePageTransition();
   const blocks: StoryBlock[] = [
     {
       id: '1',
@@ -25,14 +27,19 @@ const Storyboard: React.FC = () => {
       content: 'Explore some of my recent work and collaborations.',
       links: [
         {
-          title: 'Protogen',
+          title: 'Protogen - Launching Soon',
           url: 'https://github.com/Imergent-Technology/Protogen',
-          description: 'A prototype tool for personal and community building, designed to fit on basic Laravel hosting'
+          description: 'A prototype tool for personal and community building on Laravel hosting.'
         },
         {
-          title: 'Flow-thought Hub',
+          title: 'Slip Into The Stream',
           url: 'https://flow.tennyson.live',
-          description: 'My current long-form platform for thoughts, ideas, and gradual transformation into something more'
+          description: 'My long-form platform for thoughts, ideas, and gradual transformation.'
+        },
+        {
+          title: 'Cymatica Art Collective',
+          url: 'https://cymatica.art/',
+          description: 'Artists banding together to empower each other and uplift the community.'
         },
         {
           title: 'More to come soon...',
@@ -50,17 +57,17 @@ const Storyboard: React.FC = () => {
         {
           title: 'Flow Life Global',
           url: 'https://flowlifeglobal.org/',
-          description: 'Post-pandemic spiritual & wellness community creating safe healing spaces'
+          description: 'Post-pandemic spiritual & wellness community creating safe healing spaces.'
         },
         {
           title: 'SkyFire Arts',
           url: 'https://www.skyfirearts.com/',
-          description: 'Transformative entertainment experiences with Tesla coils, fire dancing & LED shows'
+          description: 'Transformative entertainment with Tesla coils, fire dancing & LED shows.'
         },
         {
           title: 'Lions Den Community Art',
           url: 'https://www.lionsdencommunityart.org/',
-          description: 'Vibrant art collective hosting Art in the Park events with artists, vendors, DJs, and flow performers in Long Beach'
+          description: 'Vibrant art collective hosting Art in the Park events in Long Beach.'
         },
         {
           title: 'Get involved...',
@@ -162,6 +169,7 @@ const Storyboard: React.FC = () => {
                     <Link
                       key={linkIndex}
                       to={link.url}
+                      onClick={() => setDirection('left')}
                       className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group/link"
                     >
                       <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600 transition-colors" />
@@ -240,15 +248,14 @@ const Storyboard: React.FC = () => {
               </p>
             </div>
             
-            <a
-              href="https://tennyson.live/accelerate"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/accelerate"
+              onClick={() => setDirection('left')}
               className="group/btn flex items-center space-x-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white font-elegant font-medium hover:from-pink-600 hover:to-orange-600 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               <span>Accelerate My Journey</span>
               <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-            </a>
+            </Link>
             
             <p className="text-xs text-neutral-500 font-elegant">
               Every contribution makes a difference

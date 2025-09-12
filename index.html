@@ -13,17 +13,91 @@
     <meta property="og:url" content="https://tennyson.live/" />
     <meta property="og:title" content="Tennyson Hull - Creative Developer & Digital Architect" />
     <meta property="og:description" content="Crafting elegant digital experiences with a passion for innovation and attention to detail." />
-    <meta property="og:image" content="https://tennyson.live/og-image.jpg" />
+    <meta property="og:image" content="https://tennyson.live/site.vibe.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tennyson Hull - Creative Developer & Digital Architect" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://tennyson.live/" />
     <meta property="twitter:title" content="Tennyson Hull - Creative Developer & Digital Architect" />
     <meta property="twitter:description" content="Crafting elegant digital experiences with a passion for innovation and attention to detail." />
-    <meta property="twitter:image" content="https://tennyson.live/og-image.jpg" />
+    <meta property="twitter:image" content="https://tennyson.live/site.vibe.png" />
+    <meta property="twitter:image:alt" content="Tennyson Hull - Creative Developer & Digital Architect" />
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#0ea5e9" />
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5W2X1X0HHE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5W2X1X0HHE', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+
+      // Track route changes for SPA
+      let currentPath = window.location.pathname;
+      const observer = new MutationObserver(() => {
+        if (window.location.pathname !== currentPath) {
+          currentPath = window.location.pathname;
+          gtag('config', 'G-5W2X1X0HHE', {
+            page_title: document.title,
+            page_location: window.location.href,
+            page_path: window.location.pathname
+          });
+        }
+      });
+      
+      // Start observing when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          observer.observe(document.body, { childList: true, subtree: true });
+        });
+      } else {
+        observer.observe(document.body, { childList: true, subtree: true });
+      }
+
+      // Track outbound links
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        if (link && link.href) {
+          const url = new URL(link.href);
+          const currentDomain = window.location.hostname;
+          
+          // Track outbound links
+          if (url.hostname !== currentDomain) {
+            gtag('event', 'click', {
+              event_category: 'outbound',
+              event_label: link.href,
+              transport_type: 'beacon'
+            });
+          }
+          
+          // Track internal navigation
+          if (url.hostname === currentDomain && url.pathname !== window.location.pathname) {
+            gtag('event', 'page_view', {
+              page_title: document.title,
+              page_location: link.href,
+              page_path: url.pathname
+            });
+          }
+        }
+      });
+
+      // Track popstate events (back/forward navigation)
+      window.addEventListener('popstate', function() {
+        gtag('config', 'G-5W2X1X0HHE', {
+          page_title: document.title,
+          page_location: window.location.href,
+          page_path: window.location.pathname
+        });
+      });
+    </script>
     
     <title>Tennyson Hull - Creative Developer & Digital Architect</title>
   </head>

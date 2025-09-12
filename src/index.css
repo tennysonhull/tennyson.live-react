@@ -46,6 +46,39 @@ body {
   text-shadow: 0 0 8px rgba(30, 41, 59, 0.3);
 }
 
+/* Notification colors for each theme */
+:root {
+  --notification-bg: #fef3c7;
+  --notification-border: #f59e0b;
+  --notification-text: #92400e;
+  --card-header-text: #1f2937;
+  --card-header-glow: 0 0 8px rgba(31, 41, 55, 0.3);
+}
+
+.dark {
+  --notification-bg: #1e3a8a;
+  --notification-border: #3b82f6;
+  --notification-text: #dbeafe;
+  --card-header-text: #e5e7eb;
+  --card-header-glow: 0 0 12px rgba(229, 231, 235, 0.4);
+}
+
+.regal {
+  --notification-bg: #fef3c7;
+  --notification-border: #f59e0b;
+  --notification-text: #92400e;
+  --card-header-text: #fde68a;
+  --card-header-glow: 0 0 10px rgba(253, 230, 138, 0.4);
+}
+
+.dreamy {
+  --notification-bg: #fff8f0;
+  --notification-border: #ff6900;
+  --notification-text: #cc3300;
+  --card-header-text: #1e293b;
+  --card-header-glow: 0 0 8px rgba(30, 41, 59, 0.3);
+}
+
 /* Component styles */
 .glass-effect {
   background: rgba(255, 255, 255, 0.2);

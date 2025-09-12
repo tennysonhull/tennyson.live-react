@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { animated, useSpring, useTrail } from '@react-spring/web';
-import { Heart, Calendar, Users, Star, ExternalLink, ArrowLeft, Filter } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Heart, Calendar, Users, Star, ExternalLink, Filter } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+import BackButton from './BackButton';
+import ThemeToggle from './ThemeToggle';
 
 interface UpliftItem {
   id: string;
@@ -43,12 +45,12 @@ const UpliftPage: React.FC = () => {
     },
     {
       id: '3',
-      title: 'SkyFire Arts Equipment Upgrade',
-      description: 'Help us upgrade our Tesla coil equipment and LED systems to create even more spectacular transformative entertainment experiences.',
+      title: 'Help Andrea Get Back on the Road to Heal',
+      description: 'Support Andrea, a gifted massage therapist and energy healer, to get her car repaired so she can continue helping people release deep blockages and move with less pain.',
       category: 'campaign',
-      url: 'https://www.skyfirearts.com/',
-      goal: '$5,000',
-      raised: '$1,800'
+      url: 'https://www.gofundme.com/f/help-andrea-get-back-on-the-road-to-heal',
+      goal: '$3,000',
+      raised: '$850'
     },
     {
       id: '4',
@@ -110,8 +112,26 @@ const UpliftPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* Background decorative elements */}
+    <>
+      <Helmet>
+        <title>Community Uplift - Tennyson Hull</title>
+        <meta name="description" content="Discover opportunities to support causes, join events, and connect with amazing people in our community. Together, we can create positive change." />
+        <meta name="keywords" content="community, events, crowdfunding, support, causes, social impact, community empowerment" />
+        <link rel="canonical" href="https://tennyson.live/uplift" />
+        
+        <meta property="og:title" content="Community Uplift - Tennyson Hull" />
+        <meta property="og:description" content="Discover opportunities to support causes, join events, and connect with amazing people in our community." />
+        <meta property="og:url" content="https://tennyson.live/uplift" />
+        <meta property="og:type" content="website" />
+        
+        <meta name="twitter:title" content="Community Uplift - Tennyson Hull" />
+        <meta name="twitter:description" content="Discover opportunities to support causes, join events, and connect with amazing people in our community." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+      <div className="min-h-screen relative overflow-hidden">
+        <BackButton />
+        <ThemeToggle />
+        {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/20 rounded-full blur-3xl animate-float"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
@@ -119,24 +139,39 @@ const UpliftPage: React.FC = () => {
       </div>
 
       <div className="relative z-10">
+        {/* Back Button */}
+        <BackButton />
+        
+        {/* Theme Toggle */}
+        <ThemeToggle />
+        
         {/* Header */}
         <animated.header style={fadeIn} className="py-16 px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <Link 
-              to="/" 
-              className="inline-flex items-center space-x-2 text-neutral-600 hover:text-primary-600 transition-colors mb-8"
-            >
-              <ArrowLeft size={16} />
-              <span>Back to Home</span>
-            </Link>
             
             <h1 className="text-4xl md:text-6xl font-display font-bold gradient-text mb-6">
               Get Involved
             </h1>
-            <p className="text-lg md:text-xl font-elegant text-neutral-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl font-elegant text-neutral-600 leading-relaxed max-w-2xl mx-auto mb-4">
               Discover opportunities to support causes, join events, and connect with amazing people in our community. 
               Together, we can create positive change.
             </p>
+            <div 
+              className="rounded-lg p-4 max-w-2xl mx-auto"
+              style={{
+                backgroundColor: 'var(--notification-bg, #fef3c7)',
+                border: '1px solid var(--notification-border, #f59e0b)',
+              }}
+            >
+              <p 
+                className="text-sm font-elegant"
+                style={{
+                  color: 'var(--notification-text, #92400e)',
+                }}
+              >
+                <strong>Demo Mode:</strong> This page is currently for demonstration purposes. The content below showcases the types of community engagement opportunities we'll feature.
+              </p>
+            </div>
           </div>
         </animated.header>
 
@@ -193,7 +228,13 @@ const UpliftPage: React.FC = () => {
                   <div className="flex items-start space-x-3 mb-4">
                     {getCategoryIcon(item.category)}
                     <div className="flex-1">
-                      <h3 className="text-lg font-display font-semibold text-neutral-800 group-hover:text-primary-600 transition-colors mb-2">
+                      <h3 
+                        className="text-lg font-display font-semibold group-hover:text-primary-600 transition-colors mb-2"
+                        style={{
+                          color: 'var(--card-header-text, #1f2937)',
+                          textShadow: 'var(--card-header-glow, 0 0 8px rgba(31, 41, 55, 0.3))',
+                        }}
+                      >
                         {item.title}
                       </h3>
                       <p className="text-sm text-neutral-600 font-elegant leading-relaxed">
@@ -275,6 +316,7 @@ const UpliftPage: React.FC = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 
