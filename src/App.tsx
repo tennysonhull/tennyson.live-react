@@ -32,8 +32,8 @@ function App() {
           <div className="relative z-10">
             <ThemeToggle />
             <ProfileSection />
-            <MyStory />
             <Storyboard />
+            <MyStory />
             <section id="contact-form" className="py-16 px-4">
               <ContactForm />
             </section>
