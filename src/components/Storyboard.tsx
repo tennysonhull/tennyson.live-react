@@ -1,6 +1,7 @@
 import React from 'react';
 import { animated, useTrail } from '@react-spring/web';
 import { ExternalLink, Image, Link2, Heart, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface StoryBlock {
   id: string;
@@ -156,12 +157,34 @@ const Storyboard: React.FC = () => {
                 // Handle internal links (like /uplift)
                 const isInternal = link.url.startsWith('/');
                 
+                if (isInternal) {
+                  return (
+                    <Link
+                      key={linkIndex}
+                      to={link.url}
+                      className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group/link"
+                    >
+                      <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600 transition-colors" />
+                      <div className="flex-1">
+                        <h4 className="font-elegant font-medium text-neutral-700 group-hover/link:text-primary-600 transition-colors">
+                          {link.title}
+                        </h4>
+                        {link.description && (
+                          <p className="text-sm text-neutral-500">
+                            {link.description}
+                          </p>
+                        )}
+                      </div>
+                    </Link>
+                  );
+                }
+                
                 return (
                   <a
                     key={linkIndex}
                     href={link.url}
-                    target={isInternal ? "_self" : "_blank"}
-                    rel={isInternal ? "" : "noopener noreferrer"}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group/link"
                   >
                     <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600 transition-colors" />
@@ -175,9 +198,7 @@ const Storyboard: React.FC = () => {
                         </p>
                       )}
                     </div>
-                    {!isInternal && (
-                      <ExternalLink size={14} className="text-neutral-400 group-hover/link:text-primary-500 transition-colors" />
-                    )}
+                    <ExternalLink size={14} className="text-neutral-400 group-hover/link:text-primary-500 transition-colors" />
                   </a>
                 );
               })}
