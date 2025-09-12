@@ -24,19 +24,19 @@ const Storyboard: React.FC = () => {
       content: 'Explore some of my recent work and collaborations.',
       links: [
         {
-          title: 'Portfolio Website',
-          url: 'https://github.com/tennysonhull',
-          description: 'A showcase of my development skills'
+          title: 'Protogen',
+          url: 'https://github.com/Imergent-Technology/Protogen',
+          description: 'A prototype tool for personal and community building, designed to fit on basic Laravel hosting'
         },
         {
-          title: 'Open Source Contributions',
-          url: 'https://github.com/tennysonhull',
-          description: 'Contributing to the developer community'
+          title: 'Flow-thought Hub',
+          url: 'https://flow.tennyson.live',
+          description: 'My current long-form platform for thoughts, ideas, and gradual transformation into something more'
         },
         {
-          title: 'Creative Experiments',
-          url: 'https://github.com/tennysonhull',
-          description: 'Exploring new technologies and design patterns'
+          title: 'More to come soon...',
+          url: '',
+          description: ''
         }
       ]
     },
@@ -55,6 +55,16 @@ const Storyboard: React.FC = () => {
           title: 'SkyFire Arts',
           url: 'https://www.skyfirearts.com/',
           description: 'Transformative entertainment experiences with Tesla coils, fire dancing & LED shows'
+        },
+        {
+          title: 'Lions Den Community Art',
+          url: 'https://www.lionsdencommunityart.org/',
+          description: 'Vibrant art collective hosting Art in the Park events with artists, vendors, DJs, and flow performers in Long Beach'
+        },
+        {
+          title: 'Get involved...',
+          url: '/uplift',
+          description: ''
         }
       ]
     }
@@ -120,28 +130,57 @@ const Storyboard: React.FC = () => {
               {block.content}
             </p>
             <div className="space-y-3">
-              {block.links?.map((link, linkIndex) => (
-                <a
-                  key={linkIndex}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group/link"
-                >
-                  <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600 transition-colors" />
-                  <div className="flex-1">
-                    <h4 className="font-elegant font-medium text-neutral-700 group-hover/link:text-primary-600 transition-colors">
-                      {link.title}
-                    </h4>
-                    {link.description && (
-                      <p className="text-sm text-neutral-500">
-                        {link.description}
-                      </p>
+              {block.links?.map((link, linkIndex) => {
+                // Handle links without URLs (like "More to come soon...")
+                if (!link.url) {
+                  return (
+                    <div
+                      key={linkIndex}
+                      className="flex items-center space-x-3 p-3 rounded-lg opacity-75"
+                    >
+                      <Link2 size={16} className="text-neutral-400" />
+                      <div className="flex-1">
+                        <h4 className="font-elegant font-medium text-neutral-500">
+                          {link.title}
+                        </h4>
+                        {link.description && (
+                          <p className="text-sm text-neutral-400">
+                            {link.description}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  );
+                }
+
+                // Handle internal links (like /uplift)
+                const isInternal = link.url.startsWith('/');
+                
+                return (
+                  <a
+                    key={linkIndex}
+                    href={link.url}
+                    target={isInternal ? "_self" : "_blank"}
+                    rel={isInternal ? "" : "noopener noreferrer"}
+                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group/link"
+                  >
+                    <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600 transition-colors" />
+                    <div className="flex-1">
+                      <h4 className="font-elegant font-medium text-neutral-700 group-hover/link:text-primary-600 transition-colors">
+                        {link.title}
+                      </h4>
+                      {link.description && (
+                        <p className="text-sm text-neutral-500">
+                          {link.description}
+                        </p>
+                      )}
+                    </div>
+                    {!isInternal && (
+                      <ExternalLink size={14} className="text-neutral-400 group-hover/link:text-primary-500 transition-colors" />
                     )}
-                  </div>
-                  <ExternalLink size={14} className="text-neutral-400 group-hover/link:text-primary-500 transition-colors" />
-                </a>
-              ))}
+                  </a>
+                );
+              })}
             </div>
           </animated.div>
         );
