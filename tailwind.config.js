@@ -108,43 +108,43 @@ module.exports = {
           800: '#4d00b3',
           900: '#400099',
         },
-        // New Dreamy theme - Dark rich hues of blue-violet
+        // New Dreamy theme - Pleasant teal, blue, pink, violet
         dreamy: {
-          50: '#f0f4ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#1e1b4b',
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
         },
-        // Dreamy theme secondary colors - Deep vibrant blues
+        // Dreamy theme secondary colors - Pleasant blues
         dreamySecondary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
         dreamyAccent: {
-          50: '#fdf4ff',
-          100: '#fae8ff',
-          200: '#f5d0fe',
-          300: '#f0abfc',
-          400: '#e879f9',
-          500: '#d946ef',
-          600: '#c026d3',
-          700: '#a21caf',
-          800: '#86198f',
-          900: '#701a75',
+          50: '#fdf2f8',
+          100: '#fce7f3',
+          200: '#fbcfe8',
+          300: '#f9a8d4',
+          400: '#f472b6',
+          500: '#ec4899',
+          600: '#db2777',
+          700: '#be185d',
+          800: '#9d174d',
+          900: '#831843',
         },
         // Theme-specific text colors
         text: {
@@ -152,7 +152,7 @@ module.exports = {
           dark: '#dbeafe', // Light blue
           fun: '#1e293b', // Dark slate for Fun theme
           majestic: '#fef3c7', // Gold for Majestic theme
-          dreamy: '#f0f4ff', // Very light blue-violet for new Dreamy theme
+          dreamy: '#dbeafe', // Light blue for new Dreamy theme
         },
         // Theme-specific background colors
         bg: {
@@ -187,7 +187,7 @@ module.exports = {
           dreamy: {
             bg: '#0f0f23', // Very dark blue-violet background
             border: '#6366f1', // Indigo border
-            text: '#f0f4ff', // Very light blue-violet text
+            text: '#dbeafe', // Light blue text
           },
         },
         // Theme-specific form colors
@@ -221,11 +221,11 @@ module.exports = {
             placeholder: '#fcd34d', // regal-300
           },
           dreamy: {
-            label: '#e0e7ff', // indigo-100
-            input: 'rgba(15, 15, 35, 0.4)',
-            border: '#6366f1', // dreamy-500
-            focus: '#818cf8', // dreamy-400
-            placeholder: '#a5b4fc', // dreamy-300
+            label: '#dbeafe', // blue-100
+            input: 'rgba(5, 5, 15, 0.85)',
+            border: '#6366f1', // indigo-500
+            focus: '#818cf8', // indigo-400
+            placeholder: '#a5b4fc', // indigo-300
           }
         }
       },
@@ -233,6 +233,7 @@ module.exports = {
         'elegant': ['Inter', 'system-ui', 'sans-serif'],
         'futuristic': ['JetBrains Mono', 'monospace'],
         'display': ['Trade Winds', 'cursive'],
+        'body': ['Sensation', 'system-ui', 'sans-serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

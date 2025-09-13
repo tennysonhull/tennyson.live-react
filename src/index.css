@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Trade+Winds&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Trade+Winds&family=Sensation:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,7 +7,7 @@
 body {
   background: linear-gradient(to bottom right, #f0f9ff, #f0fdf4, #fef7ed);
   color: #171717;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Sensation', system-ui, sans-serif;
   min-height: 100vh;
   transition: colors 0.3s ease;
 }
@@ -46,7 +46,7 @@ body {
   color: #fef3c7;
 }
 
-/* New Dreamy theme styles - dark psychedelic blue-violet */
+/* New Dreamy theme styles - keep psychedelic background, update text colors */
 .dreamy body {
   background: 
     /* Psychedelic diagonal pattern */
@@ -60,39 +60,46 @@ body {
     radial-gradient(circle at 90% 10%, rgba(129, 140, 248, 0.3) 0%, transparent 60%),
     /* Base dark gradient */
     linear-gradient(135deg, 
-      rgba(15, 15, 35, 0.98) 0%, 
-      rgba(30, 27, 75, 0.95) 25%, 
-      rgba(67, 56, 202, 0.9) 50%, 
-      rgba(55, 48, 163, 0.95) 75%, 
-      rgba(15, 15, 35, 0.98) 100%
+      rgba(10, 10, 25, 0.98) 0%, 
+      rgba(20, 18, 50, 0.95) 25%, 
+      rgba(45, 38, 150, 0.9) 50%, 
+      rgba(35, 30, 120, 0.95) 75%, 
+      rgba(10, 10, 25, 0.98) 100%
     );
-  color: #f0f4ff;
-  text-shadow: 0 0 15px rgba(240, 244, 255, 0.6), 0 0 30px rgba(99, 102, 241, 0.3);
+  color: #dbeafe;
+  text-shadow: 0 0 8px rgba(219, 234, 254, 0.4);
 }
 
 /* Dreamy theme specific enhancements */
 .dreamy .gradient-text {
-  background: linear-gradient(to right, #f0f4ff, #e0e7ff, #c7d2fe, #a5b4fc);
+  background: linear-gradient(to right, #60a5fa, #3b82f6, #6366f1, #8b5cf6, #a855f7, #c084fc);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  text-shadow: 0 0 20px rgba(240, 244, 255, 0.8), 0 0 40px rgba(99, 102, 241, 0.5), 0 0 60px rgba(129, 140, 248, 0.3);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
 }
 
 .dreamy .glass-effect {
-  background: rgba(15, 15, 35, 0.6);
+  background: rgba(5, 5, 15, 0.9);
   backdrop-filter: blur(16px);
   border: 1px solid rgba(99, 102, 241, 0.4);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3), 0 0 20px rgba(99, 102, 241, 0.2);
 }
 
 .dreamy h1, .dreamy h2, .dreamy h3 {
-  text-shadow: 0 0 20px rgba(240, 244, 255, 0.7), 0 0 40px rgba(99, 102, 241, 0.4), 0 0 60px rgba(129, 140, 248, 0.2);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.15);
+}
+
+/* Override gradient-text for panel headers in Dreamy theme */
+.dreamy .glass-effect .gradient-text {
+  background: none !important;
+  color: #e0e7ff !important;
+  text-shadow: 0 0 6px rgba(224, 231, 255, 0.4);
 }
 
 .dreamy .text-neutral-600, .dreamy .text-neutral-700, .dreamy .text-neutral-800 {
   color: #e0e7ff !important;
-  text-shadow: 0 0 10px rgba(224, 231, 255, 0.5);
+  text-shadow: 0 0 8px rgba(224, 231, 255, 0.5);
 }
 
 /* Notification colors for each theme */
@@ -190,13 +197,6 @@ body {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.dreamy .gradient-text {
-  background: linear-gradient(to right, #6ee7b7, #1e40af, #581c87);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 20px rgba(110, 231, 183, 0.6), 0 0 40px rgba(30, 64, 175, 0.5), 0 0 60px rgba(88, 28, 135, 0.4);
-}
 
 /* Dark theme text overrides */
 .dark .text-neutral-600 {
@@ -290,33 +290,33 @@ body {
 
 /* Dreamy theme text overrides */
 .dreamy .text-neutral-600 {
-  color: #1e293b;
-  text-shadow: 0 0 8px rgba(30, 41, 59, 0.4);
+  color: #e0e7ff;
+  text-shadow: 0 0 8px rgba(224, 231, 255, 0.5);
 }
 
 .dreamy .text-neutral-500 {
-  color: #334155;
-  text-shadow: 0 0 8px rgba(51, 65, 85, 0.4);
+  color: #c7d2fe;
+  text-shadow: 0 0 8px rgba(199, 210, 254, 0.5);
 }
 
 .dreamy .text-neutral-200 {
-  color: #1e293b;
-  text-shadow: 0 0 8px rgba(30, 41, 59, 0.4);
+  color: #f0f4ff;
+  text-shadow: 0 0 8px rgba(240, 244, 255, 0.5);
 }
 
 .dreamy .text-neutral-300 {
-  color: #334155;
-  text-shadow: 0 0 8px rgba(51, 65, 85, 0.4);
+  color: #e0e7ff;
+  text-shadow: 0 0 8px rgba(224, 231, 255, 0.5);
 }
 
 .dreamy .text-primary-600 {
-  color: #3730a3;
-  text-shadow: 0 0 8px rgba(55, 48, 163, 0.4);
+  color: #a5b4fc;
+  text-shadow: 0 0 8px rgba(165, 180, 252, 0.6);
 }
 
 .dreamy .text-primary-400 {
-  color: #4338ca;
-  text-shadow: 0 0 8px rgba(67, 56, 202, 0.4);
+  color: #818cf8;
+  text-shadow: 0 0 8px rgba(129, 140, 248, 0.6);
 }
 
 .dreamy .bg-primary-200\/20 {
@@ -344,27 +344,27 @@ body {
 }
 
 .dreamy .from-primary-400 {
-  --tw-gradient-from: #ff8c29;
+  --tw-gradient-from: #818cf8;
 }
 
 .dreamy .via-secondary-400 {
-  --tw-gradient-via: #47a3ff;
+  --tw-gradient-via: #6366f1;
 }
 
 .dreamy .to-accent-400 {
-  --tw-gradient-to: #a347ff;
+  --tw-gradient-to: #4f46e5;
 }
 
 .dreamy .from-primary-600 {
-  --tw-gradient-from: #ff8c29;
+  --tw-gradient-from: #6366f1;
 }
 
 .dreamy .via-secondary-600 {
-  --tw-gradient-via: #47a3ff;
+  --tw-gradient-via: #4f46e5;
 }
 
 .dreamy .to-accent-600 {
-  --tw-gradient-to: #a347ff;
+  --tw-gradient-to: #4338ca;
 }
 
 /* Contact form styling using theme variables */

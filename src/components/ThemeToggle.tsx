@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { useTheme } from '../contexts/ThemeContext';
-import { Sun, Moon, Crown, Palette, Waves } from 'lucide-react';
+import { Sun, Moon, Crown, Palette, Sparkles } from 'lucide-react';
 
 const ThemeToggle: React.FC = () => {
   const { theme, setTheme, toggleTheme } = useTheme();
@@ -23,7 +23,7 @@ const ThemeToggle: React.FC = () => {
       case 'majestic':
         return Crown;
       case 'dreamy':
-        return Waves;
+        return Sparkles;
       default:
         return Sun;
     }
@@ -73,7 +73,7 @@ const ThemeToggle: React.FC = () => {
                 case 'dark': return Moon;
                 case 'fun': return Palette;
                 case 'majestic': return Crown;
-                case 'dreamy': return Waves;
+                case 'dreamy': return Sparkles;
               }
             };
             const Icon = getIcon();
