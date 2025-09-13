@@ -80,30 +80,48 @@ body {
 }
 
 .dreamy .glass-effect {
-  background: rgba(5, 5, 15, 0.9);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(99, 102, 241, 0.4);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3), 0 0 20px rgba(99, 102, 241, 0.2);
+  background: var(--surface-primary);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(139, 92, 246, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .dreamy h1, .dreamy h2, .dreamy h3 {
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.15);
 }
 
-/* Override gradient-text for panel headers in Dreamy theme */
-.dreamy .glass-effect .gradient-text {
-  background: none !important;
-  color: #e0e7ff !important;
-  text-shadow: 0 0 6px rgba(224, 231, 255, 0.4);
-}
+/* Panel headers now use semantic classes - no override needed */
 
-.dreamy .text-neutral-600, .dreamy .text-neutral-700, .dreamy .text-neutral-800 {
-  color: #e0e7ff !important;
-  text-shadow: 0 0 8px rgba(224, 231, 255, 0.5);
-}
+/* Dreamy theme text overrides - now handled by CSS variables */
 
-/* Notification colors for each theme */
+/* Theme variables for semantic colors */
 :root {
+  /* Content colors */
+  --content-primary: #1e293b;
+  --content-secondary: #64748b;
+  --content-muted: #94a3b8;
+  --content-subtle: #cbd5e1;
+  
+  /* Surface colors */
+  --surface-primary: #ffffff;
+  --surface-secondary: #f8fafc;
+  --surface-accent: #f1f5f9;
+  
+  /* Interactive colors */
+  --interactive-primary: #3b82f6;
+  --interactive-secondary: #10b981;
+  --interactive-accent: #f59e0b;
+  
+  /* Panel header gradient */
+  --panel-header-gradient: linear-gradient(to right, #0284c7, #16a34a, #d97706);
+  
+  /* Icon background gradient */
+  --icon-bg-gradient: linear-gradient(to bottom right, #3b82f6, #10b981, #f59e0b);
+  
+  /* Support button gradient */
+  --support-button-gradient: linear-gradient(to right, #ec4899, #f97316);
+  
+  /* Notification colors */
   --notification-bg: #fef3c7;
   --notification-border: #f59e0b;
   --notification-text: #92400e;
@@ -112,6 +130,32 @@ body {
 }
 
 .dark {
+  /* Content colors */
+  --content-primary: #f8fafc;
+  --content-secondary: #cbd5e1;
+  --content-muted: #94a3b8;
+  --content-subtle: #64748b;
+  
+  /* Surface colors */
+  --surface-primary: #1e293b;
+  --surface-secondary: #334155;
+  --surface-accent: #475569;
+  
+  /* Interactive colors */
+  --interactive-primary: #60a5fa;
+  --interactive-secondary: #34d399;
+  --interactive-accent: #fbbf24;
+  
+  /* Panel header gradient */
+  --panel-header-gradient: linear-gradient(to right, #60a5fa, #4ade80, #fbbf24);
+  
+  /* Icon background gradient */
+  --icon-bg-gradient: linear-gradient(to bottom right, #60a5fa, #34d399, #fbbf24);
+  
+  /* Support button gradient */
+  --support-button-gradient: linear-gradient(to right, #f472b6, #fb923c);
+  
+  /* Notification colors */
   --notification-bg: #1e3a8a;
   --notification-border: #3b82f6;
   --notification-text: #dbeafe;
@@ -120,6 +164,32 @@ body {
 }
 
 .fun {
+  /* Content colors */
+  --content-primary: #1e293b;
+  --content-secondary: #475569;
+  --content-muted: #64748b;
+  --content-subtle: #94a3b8;
+  
+  /* Surface colors */
+  --surface-primary: #fff8f0;
+  --surface-secondary: #ffe8d1;
+  --surface-accent: #ffd1a3;
+  
+  /* Interactive colors */
+  --interactive-primary: #ff6900;
+  --interactive-secondary: #1a8cff;
+  --interactive-accent: #a347ff;
+  
+  /* Panel header gradient */
+  --panel-header-gradient: linear-gradient(to right, #ff6900, #1a8cff, #a347ff);
+  
+  /* Icon background gradient */
+  --icon-bg-gradient: linear-gradient(to bottom right, #ff6900, #1a8cff, #a347ff);
+  
+  /* Support button gradient */
+  --support-button-gradient: linear-gradient(to right, #ff6900, #ff8c00);
+  
+  /* Notification colors */
   --notification-bg: #fff8f0;
   --notification-border: #ff6900;
   --notification-text: #cc3300;
@@ -128,6 +198,32 @@ body {
 }
 
 .majestic {
+  /* Content colors */
+  --content-primary: #fef3c7;
+  --content-secondary: #fde68a;
+  --content-muted: #fcd34d;
+  --content-subtle: #fbbf24;
+  
+  /* Surface colors */
+  --surface-primary: #262626;
+  --surface-secondary: #404040;
+  --surface-accent: #525252;
+  
+  /* Interactive colors */
+  --interactive-primary: #f59e0b;
+  --interactive-secondary: #d97706;
+  --interactive-accent: #b45309;
+  
+  /* Panel header gradient */
+  --panel-header-gradient: linear-gradient(to right, #fde68a, #fcd34d, #fbbf24);
+  
+  /* Icon background gradient */
+  --icon-bg-gradient: linear-gradient(to bottom right, #f59e0b, #d97706, #b45309);
+  
+  /* Support button gradient */
+  --support-button-gradient: linear-gradient(to right, #f59e0b, #d97706);
+  
+  /* Notification colors */
   --notification-bg: #fef3c7;
   --notification-border: #f59e0b;
   --notification-text: #92400e;
@@ -136,16 +232,92 @@ body {
 }
 
 .dreamy {
-  --notification-bg: #1a0b2e;
-  --notification-border: #8b45ff;
-  --notification-text: #e0e7ff;
+  /* Content colors */
+  --content-primary: #e0e7ff;
+  --content-secondary: #c7d2fe;
+  --content-muted: #a5b4fc;
+  --content-subtle: #818cf8;
+  
+  /* Surface colors - lighter blue-violet glass effect */
+  --surface-primary: rgba(20, 20, 45, 0.6);
+  --surface-secondary: rgba(25, 25, 55, 0.55);
+  --surface-accent: rgba(30, 30, 65, 0.5);
+  
+  /* Interactive colors */
+  --interactive-primary: #6366f1;
+  --interactive-secondary: #8b5cf6;
+  --interactive-accent: #a855f7;
+  
+  /* Panel header gradient - lighter version of name gradient */
+  --panel-header-gradient: linear-gradient(to right, #a5b4fc, #818cf8, #c084fc, #d8b4fe);
+  
+  /* Icon background gradient */
+  --icon-bg-gradient: linear-gradient(to bottom right, #6366f1, #8b5cf6, #a855f7);
+  
+  /* Support button gradient */
+  --support-button-gradient: linear-gradient(to right, #8b5cf6, #a855f7);
+  
+  /* Notification colors */
+  --notification-bg: #0f0f23;
+  --notification-border: #6366f1;
+  --notification-text: #dbeafe;
   --card-header-text: #c7d2fe;
   --card-header-glow: 0 0 15px rgba(199, 210, 254, 0.5);
 }
 
+/* Semantic utility classes using CSS variables */
+.text-content-primary { color: var(--content-primary); }
+.text-content-secondary { color: var(--content-secondary); }
+.text-content-muted { color: var(--content-muted); }
+.text-content-subtle { color: var(--content-subtle); }
+
+.bg-surface-primary { background-color: var(--surface-primary); }
+.bg-surface-secondary { background-color: var(--surface-secondary); }
+.bg-surface-accent { background-color: var(--surface-accent); }
+
+.text-interactive-primary { color: var(--interactive-primary); }
+.text-interactive-secondary { color: var(--interactive-secondary); }
+.text-interactive-accent { color: var(--interactive-accent); }
+
+.hover\:text-interactive-primary:hover { color: var(--interactive-primary); }
+.hover\:text-interactive-secondary:hover { color: var(--interactive-secondary); }
+.hover\:text-interactive-accent:hover { color: var(--interactive-accent); }
+
+.group:hover .group-hover\:text-interactive-primary { color: var(--interactive-primary); }
+.group:hover .group-hover\:text-interactive-secondary { color: var(--interactive-secondary); }
+.group:hover .group-hover\:text-interactive-accent { color: var(--interactive-accent); }
+
+/* Panel header gradient utility */
+.text-panel-header-gradient {
+  background: var(--panel-header-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Icon background gradient utility */
+.bg-icon-gradient {
+  background: var(--icon-bg-gradient);
+}
+
+/* Support button gradient utility */
+.bg-support-button-gradient {
+  background: var(--support-button-gradient);
+}
+
+/* Theme-specific panel header shadows */
+.dark .text-panel-header-gradient {
+  text-shadow: 0 0 12px rgba(96, 165, 250, 0.4), 0 0 20px rgba(74, 222, 128, 0.3), 0 0 28px rgba(251, 191, 36, 0.2);
+}
+
+.dreamy .text-panel-header-gradient {
+  text-shadow: 0 0 10px rgba(165, 180, 252, 0.5), 0 0 18px rgba(129, 140, 248, 0.4), 0 0 26px rgba(192, 132, 252, 0.3);
+}
+
 /* Component styles */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--surface-primary);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(229, 229, 229, 0.4);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -191,10 +363,10 @@ body {
 
 /* Dreamy theme components */
 .dreamy .glass-effect {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 209, 163, 0.4);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  background: var(--surface-primary);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(139, 92, 246, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 

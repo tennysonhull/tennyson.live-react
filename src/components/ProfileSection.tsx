@@ -29,21 +29,21 @@ const ProfileSection: React.FC = () => {
       name: 'GitHub',
       icon: Github,
       url: 'https://github.com/tennysonhull',
-      color: 'hover:text-primary-600',
+      color: 'hover:text-interactive-primary',
       isExternal: true
     },
     {
       name: 'LinkedIn',
       icon: Linkedin,
       url: 'https://linkedin.com/in/tennysonhull',
-      color: 'hover:text-secondary-600',
+      color: 'hover:text-interactive-secondary',
       isExternal: true
     },
     {
       name: 'Email',
       icon: Mail,
       url: '#contact',
-      color: 'hover:text-accent-600',
+      color: 'hover:text-interactive-accent',
       isExternal: false,
       onClick: handleEmailClick
     }
@@ -66,9 +66,9 @@ const ProfileSection: React.FC = () => {
             </div>
             
             {/* Floating decorative elements around profile */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent-400/80 rounded-full animate-float"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary-400/80 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-secondary-400/80 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-interactive-accent/80 rounded-full animate-float"></div>
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-interactive-primary/80 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-interactive-secondary/80 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
           </div>
         </animated.div>
 
@@ -77,11 +77,11 @@ const ProfileSection: React.FC = () => {
             Tennyson Hull
           </h1>
           
-          <p className="text-xl md:text-2xl text-neutral-600 font-elegant font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-content-secondary font-elegant font-light max-w-2xl mx-auto leading-relaxed">
             Creative Developer & Digital Architect
           </p>
           
-          <p className="text-lg text-neutral-500 font-elegant max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-content-muted font-elegant max-w-3xl mx-auto leading-relaxed">
             Crafting elegant digital experiences with a passion for innovation and attention to detail. 
             Building the future, one pixel at a time.
           </p>

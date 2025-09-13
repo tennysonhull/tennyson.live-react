@@ -22,7 +22,7 @@ const MyStory = () => {
         </div>
         
         <div className="prose prose-lg max-w-none">
-          <div className="text-lg sm:text-xl leading-loose space-y-6 text-neutral-700">
+          <div className="text-lg sm:text-xl leading-loose space-y-6 text-content-primary">
             <p className="font-body">
               For a long time, I struggled to find my voice. Not because I didn’t care or couldn’t connect, but because the way I think doesn’t always fit into neat, linear explanations. I tend to see the world in patterns and systems — almost holographic in nature — which can make it hard to translate my thoughts in ways others instantly follow. That gap sometimes left me quiet, holding back ideas I deeply cared about. But in the silence, I learned patience. And when I finally broke through, I discovered a deep gratitude for expression itself — whether through words, technology, or the spaces I help bring to life.
             </p>

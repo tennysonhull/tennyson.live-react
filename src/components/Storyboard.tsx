@@ -91,10 +91,10 @@ const Storyboard: React.FC = () => {
       case 'text':
         return (
           <animated.div key={block.id} style={animation} className="glass-effect rounded-2xl p-6">
-            <h3 className="text-xl font-display font-semibold gradient-text mb-3">
+            <h3 className="text-xl font-display font-semibold text-panel-header-gradient mb-3">
               {block.title}
             </h3>
-            <p className="text-neutral-600 font-elegant leading-relaxed">
+            <p className="text-content-secondary font-elegant leading-relaxed">
               {block.content}
             </p>
           </animated.div>
@@ -103,7 +103,7 @@ const Storyboard: React.FC = () => {
       case 'image':
         return (
           <animated.div key={block.id} style={animation} className="glass-effect rounded-2xl p-6">
-            <h3 className="text-xl font-display font-semibold gradient-text mb-4">
+            <h3 className="text-xl font-display font-semibold text-panel-header-gradient mb-4">
               {block.title}
             </h3>
             <div className="aspect-video bg-gradient-to-br from-primary-100 to-secondary-100 rounded-xl flex items-center justify-center">
@@ -115,14 +115,14 @@ const Storyboard: React.FC = () => {
                 />
               ) : (
                 <div className="text-center">
-                  <Image size={48} className="text-neutral-400 mx-auto mb-2" />
-                  <p className="text-neutral-500 font-elegant">
+                  <Image size={48} className="text-content-muted mx-auto mb-2" />
+                  <p className="text-content-muted font-elegant">
                     Image placeholder
                   </p>
                 </div>
               )}
             </div>
-            <p className="text-neutral-500 font-elegant mt-4">
+            <p className="text-content-muted font-elegant mt-4">
               {block.content}
             </p>
           </animated.div>
@@ -131,10 +131,10 @@ const Storyboard: React.FC = () => {
       case 'links':
         return (
           <animated.div key={block.id} style={animation} className="glass-effect rounded-2xl p-6">
-            <h3 className="text-xl font-display font-semibold gradient-text mb-4">
+            <h3 className="text-xl font-display font-semibold text-panel-header-gradient mb-4">
               {block.title}
             </h3>
-            <p className="text-neutral-500 font-elegant mb-4">
+            <p className="text-content-muted font-elegant mb-4">
               {block.content}
             </p>
             <div className="space-y-3">
@@ -146,13 +146,13 @@ const Storyboard: React.FC = () => {
                       key={linkIndex}
                       className="flex items-center space-x-3 p-3 rounded-lg opacity-75"
                     >
-                      <Link2 size={16} className="text-neutral-400" />
+                      <Link2 size={16} className="text-content-muted" />
                       <div className="flex-1">
-                        <h4 className="font-elegant font-medium text-neutral-500">
+                        <h4 className="font-elegant font-medium text-content-muted">
                           {link.title}
                         </h4>
                         {link.description && (
-                          <p className="text-sm text-neutral-400">
+                          <p className="text-sm text-content-muted">
                             {link.description}
                           </p>
                         )}
@@ -172,13 +172,13 @@ const Storyboard: React.FC = () => {
                       onClick={() => setDirection('left')}
                       className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group/link"
                     >
-                      <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600 transition-colors" />
+                      <Link2 size={16} className="text-interactive-primary group-hover/link:text-interactive-primary transition-colors" />
                       <div className="flex-1">
-                        <h4 className="font-elegant font-medium text-neutral-700 group-hover/link:text-primary-600 transition-colors">
+                        <h4 className="font-elegant font-medium text-content-primary group-hover/link:text-interactive-primary transition-colors">
                           {link.title}
                         </h4>
                         {link.description && (
-                          <p className="text-sm text-neutral-500">
+                          <p className="text-sm text-content-muted">
                             {link.description}
                           </p>
                         )}
@@ -195,18 +195,18 @@ const Storyboard: React.FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-all duration-200 group/link"
                   >
-                    <Link2 size={16} className="text-primary-500 group-hover/link:text-primary-600 transition-colors" />
+                    <Link2 size={16} className="text-interactive-primary group-hover/link:text-interactive-primary transition-colors" />
                     <div className="flex-1">
-                      <h4 className="font-elegant font-medium text-neutral-700 group-hover/link:text-primary-600 transition-colors">
+                      <h4 className="font-elegant font-medium text-content-primary group-hover/link:text-interactive-primary transition-colors">
                         {link.title}
                       </h4>
                       {link.description && (
-                        <p className="text-sm text-neutral-500">
+                        <p className="text-sm text-content-muted">
                           {link.description}
                         </p>
                       )}
                     </div>
-                    <ExternalLink size={14} className="text-neutral-400 group-hover/link:text-primary-500 transition-colors" />
+                    <ExternalLink size={14} className="text-content-muted group-hover/link:text-interactive-primary transition-colors" />
                   </a>
                 );
               })}
@@ -240,10 +240,10 @@ const Storyboard: React.FC = () => {
             </div>
             
             <div className="space-y-2">
-              <h3 className="text-xl font-display font-semibold gradient-text">
+              <h3 className="text-xl font-display font-semibold text-panel-header-gradient">
                 Support My Work
               </h3>
-              <p className="text-neutral-600 font-elegant text-sm leading-relaxed">
+              <p className="text-content-secondary font-elegant text-sm leading-relaxed">
                 If you feel called to support my creative journey and help me continue building amazing experiences, I would be deeply grateful.
               </p>
             </div>
@@ -251,13 +251,13 @@ const Storyboard: React.FC = () => {
             <Link
               to="/accelerate"
               onClick={() => setDirection('left')}
-              className="group/btn flex items-center space-x-2 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white font-elegant font-medium hover:from-pink-600 hover:to-orange-600 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="group/btn flex items-center space-x-2 px-6 py-3 rounded-full bg-support-button-gradient text-white font-elegant font-medium hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               <span>Accelerate My Journey</span>
               <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
             </Link>
             
-            <p className="text-xs text-neutral-500 font-elegant">
+            <p className="text-xs text-content-muted font-elegant">
               Every contribution makes a difference
             </p>
           </animated.div>

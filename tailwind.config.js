@@ -146,21 +146,108 @@ module.exports = {
           800: '#9d174d',
           900: '#831843',
         },
-        // Theme-specific text colors
-        text: {
-          light: '#1e40af', // Deep blue
-          dark: '#dbeafe', // Light blue
-          fun: '#1e293b', // Dark slate for Fun theme
-          majestic: '#fef3c7', // Gold for Majestic theme
-          dreamy: '#dbeafe', // Light blue for new Dreamy theme
+        // Semantic text colors that work across all themes
+        content: {
+          primary: {
+            light: '#1e293b',    // Dark slate
+            dark: '#f8fafc',     // Light gray
+            fun: '#1e293b',      // Dark slate
+            majestic: '#fef3c7', // Gold
+            dreamy: '#e0e7ff',   // Light blue
+          },
+          secondary: {
+            light: '#64748b',    // Slate-500
+            dark: '#cbd5e1',     // Slate-300
+            fun: '#475569',      // Slate-600
+            majestic: '#fde68a', // Amber-200
+            dreamy: '#c7d2fe',   // Indigo-200
+          },
+          muted: {
+            light: '#94a3b8',    // Slate-400
+            dark: '#94a3b8',     // Slate-400
+            fun: '#64748b',      // Slate-500
+            majestic: '#fcd34d', // Amber-300
+            dreamy: '#a5b4fc',   // Indigo-300
+          },
+          subtle: {
+            light: '#cbd5e1',    // Slate-300
+            dark: '#64748b',     // Slate-500
+            fun: '#94a3b8',      // Slate-400
+            majestic: '#fbbf24', // Amber-400
+            dreamy: '#818cf8',   // Indigo-400
+          }
         },
-        // Theme-specific background colors
-        bg: {
-          light: '#f0f9ff',
-          dark: '#0c4a6e',
-          fun: '#fff8f0',
-          majestic: '#a16207',
-          dreamy: '#0f0f23',
+        // Semantic background colors
+        surface: {
+          primary: {
+            light: '#ffffff',    // White
+            dark: '#1e293b',     // Slate-800
+            fun: '#fff8f0',      // Orange-50
+            majestic: '#262626', // Neutral-800
+            dreamy: 'rgba(20, 20, 45, 0.6)', // Lighter blue-violet glass effect
+          },
+          secondary: {
+            light: '#f8fafc',    // Slate-50
+            dark: '#334155',     // Slate-700
+            fun: '#ffe8d1',      // Orange-100
+            majestic: '#404040', // Neutral-700
+            dreamy: 'rgba(25, 25, 55, 0.55)', // Lighter blue-violet glass effect
+          },
+          accent: {
+            light: '#f1f5f9',    // Slate-100
+            dark: '#475569',     // Slate-600
+            fun: '#ffd1a3',      // Orange-200
+            majestic: '#525252', // Neutral-600
+            dreamy: 'rgba(30, 30, 65, 0.5)', // Lighter blue-violet glass effect
+          }
+        },
+        // Interactive colors
+        interactive: {
+          primary: {
+            light: '#3b82f6',    // Blue-500
+            dark: '#60a5fa',     // Blue-400
+            fun: '#ff6900',      // Orange-500
+            majestic: '#f59e0b', // Amber-500
+            dreamy: '#6366f1',   // Indigo-500
+          },
+          secondary: {
+            light: '#10b981',    // Emerald-500
+            dark: '#34d399',     // Emerald-400
+            fun: '#1a8cff',      // Blue-500
+            majestic: '#d97706', // Amber-600
+            dreamy: '#8b5cf6',   // Violet-500
+          },
+          accent: {
+            light: '#f59e0b',    // Amber-500
+            dark: '#fbbf24',     // Amber-400
+            fun: '#a347ff',      // Purple-500
+            majestic: '#b45309', // Amber-700
+            dreamy: '#a855f7',   // Purple-500
+          }
+        },
+        // Panel header gradient colors (matching name gradients but lighter)
+        panelHeader: {
+          light: 'linear-gradient(to right, #0284c7, #16a34a, #d97706)', // Same as name
+          dark: 'linear-gradient(to right, #60a5fa, #4ade80, #fbbf24)', // Same as name
+          fun: 'linear-gradient(to right, #ff6900, #1a8cff, #a347ff)', // Same as name
+          majestic: 'linear-gradient(to right, #fde68a, #fcd34d, #fbbf24)', // Same as name
+          dreamy: 'linear-gradient(to right, #a5b4fc, #818cf8, #c084fc, #d8b4fe)', // Lighter version of name gradient
+        },
+        // Icon background gradient colors (matching theme colors)
+        iconBg: {
+          light: 'linear-gradient(to bottom right, #3b82f6, #10b981, #f59e0b)', // Blue, emerald, amber
+          dark: 'linear-gradient(to bottom right, #60a5fa, #34d399, #fbbf24)', // Lighter versions
+          fun: 'linear-gradient(to bottom right, #ff6900, #1a8cff, #a347ff)', // Orange, blue, purple
+          majestic: 'linear-gradient(to bottom right, #f59e0b, #d97706, #b45309)', // Gold variations
+          dreamy: 'linear-gradient(to bottom right, #6366f1, #8b5cf6, #a855f7)', // Purple/blue variations
+        },
+        // Support button gradient colors (for "Support My Work" panel)
+        supportButton: {
+          light: 'linear-gradient(to right, #ec4899, #f97316)', // Pink to orange
+          dark: 'linear-gradient(to right, #f472b6, #fb923c)', // Lighter versions
+          fun: 'linear-gradient(to right, #ff6900, #ff8c00)', // Orange variations
+          majestic: 'linear-gradient(to right, #f59e0b, #d97706)', // Gold variations
+          dreamy: 'linear-gradient(to right, #8b5cf6, #a855f7)', // Purple variations
         },
         // Theme-specific notification colors
         notification: {

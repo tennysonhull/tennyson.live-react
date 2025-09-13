@@ -46,9 +46,9 @@ const AcceleratePage: React.FC = () => {
         <ThemeToggle />
         {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent-200/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-interactive-primary/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-interactive-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-interactive-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="relative z-10">
@@ -75,7 +75,7 @@ const AcceleratePage: React.FC = () => {
               style={contentFadeIn}
               className="glass-effect rounded-3xl p-8 md:p-12 text-center"
             >
-              <div className="space-y-6 text-lg md:text-xl font-elegant leading-relaxed text-neutral-700">
+              <div className="space-y-6 text-lg md:text-xl font-elegant leading-relaxed text-content-primary">
                 <p>
                   I'm in the process of weaving together a constellation of ideas, tools, and initiatives—each one a seed in a larger ecosystem of support, empowerment, and community-rooted change.
                 </p>
@@ -110,7 +110,7 @@ const AcceleratePage: React.FC = () => {
                 <span className="text-lg">Walk With Me</span>
               </a>
               
-              <p className="text-sm text-neutral-500 font-elegant mt-4">
+              <p className="text-sm text-content-muted font-elegant mt-4">
                 Your support helps accelerate this vision into reality
               </p>
             </animated.div>

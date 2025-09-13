@@ -133,9 +133,9 @@ const UpliftPage: React.FC = () => {
         <ThemeToggle />
         {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent-200/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-interactive-primary/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-interactive-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-interactive-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       <div className="relative z-10">
@@ -152,7 +152,7 @@ const UpliftPage: React.FC = () => {
             <h1 className="text-4xl md:text-6xl font-display font-bold gradient-text mb-6">
               Get Involved
             </h1>
-            <p className="text-lg md:text-xl font-elegant text-neutral-600 leading-relaxed max-w-2xl mx-auto mb-4">
+            <p className="text-lg md:text-xl font-elegant text-content-secondary leading-relaxed max-w-2xl mx-auto mb-4">
               Discover opportunities to support causes, join events, and connect with amazing people in our community. 
               Together, we can create positive change.
             </p>
@@ -190,8 +190,8 @@ const UpliftPage: React.FC = () => {
                   onClick={() => setActiveFilter(filter.key as any)}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-full font-elegant transition-all duration-200 ${
                     activeFilter === filter.key
-                      ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white/10 text-neutral-600 hover:bg-white/20 hover:text-neutral-800'
+                      ? 'bg-interactive-primary text-white shadow-lg'
+                      : 'bg-white/10 text-content-secondary hover:bg-white/20 hover:text-content-primary'
                   }`}
                 >
                   {filter.icon}
@@ -229,7 +229,7 @@ const UpliftPage: React.FC = () => {
                     {getCategoryIcon(item.category)}
                     <div className="flex-1">
                       <h3 
-                        className="text-lg font-display font-semibold group-hover:text-primary-600 transition-colors mb-2"
+                        className="text-lg font-display font-semibold group-hover:text-interactive-primary transition-colors mb-2"
                         style={{
                           color: 'var(--card-header-text, #1f2937)',
                           textShadow: 'var(--card-header-glow, 0 0 8px rgba(31, 41, 55, 0.3))',
@@ -237,7 +237,7 @@ const UpliftPage: React.FC = () => {
                       >
                         {item.title}
                       </h3>
-                      <p className="text-sm text-neutral-600 font-elegant leading-relaxed">
+                      <p className="text-sm text-content-secondary font-elegant leading-relaxed">
                         {item.description}
                       </p>
                     </div>
@@ -247,8 +247,8 @@ const UpliftPage: React.FC = () => {
                   {item.category === 'campaign' && item.goal && item.raised && (
                     <div className="mb-4">
                       <div className="flex justify-between text-sm font-elegant mb-2">
-                        <span className="text-neutral-600">Progress</span>
-                        <span className="text-neutral-800 font-medium">{item.raised} / {item.goal}</span>
+                        <span className="text-content-secondary">Progress</span>
+                        <span className="text-content-primary font-medium">{item.raised} / {item.goal}</span>
                       </div>
                       <div className="w-full bg-neutral-200 rounded-full h-2">
                         <div 
@@ -265,13 +265,13 @@ const UpliftPage: React.FC = () => {
                   {item.category === 'event' && (item.date || item.location) && (
                     <div className="mb-4 space-y-1">
                       {item.date && (
-                        <div className="flex items-center space-x-2 text-sm text-neutral-600">
+                        <div className="flex items-center space-x-2 text-sm text-content-secondary">
                           <Calendar size={14} />
                           <span className="font-elegant">{item.date}</span>
                         </div>
                       )}
                       {item.location && (
-                        <div className="flex items-center space-x-2 text-sm text-neutral-600">
+                        <div className="flex items-center space-x-2 text-sm text-content-secondary">
                           <Users size={14} />
                           <span className="font-elegant">{item.location}</span>
                         </div>
@@ -285,7 +285,7 @@ const UpliftPage: React.FC = () => {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary-500 text-white font-elegant font-medium hover:bg-primary-600 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                      className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-interactive-primary text-white font-elegant font-medium hover:bg-interactive-primary hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
                     >
                       <span>
                         {item.category === 'campaign' ? 'Support' : 
@@ -302,11 +302,11 @@ const UpliftPage: React.FC = () => {
             {filteredItems.length === 0 && (
               <animated.div style={fadeIn} className="text-center py-16">
                 <div className="glass-effect rounded-2xl p-8 max-w-md mx-auto">
-                  <Filter size={48} className="text-neutral-400 mx-auto mb-4" />
-                  <h3 className="text-xl font-display font-semibold text-neutral-700 mb-2">
+                  <Filter size={48} className="text-content-muted mx-auto mb-4" />
+                  <h3 className="text-xl font-display font-semibold text-content-primary mb-2">
                     No items found
                   </h3>
-                  <p className="text-neutral-500 font-elegant">
+                  <p className="text-content-muted font-elegant">
                     Try selecting a different category or check back later for new opportunities.
                   </p>
                 </div>

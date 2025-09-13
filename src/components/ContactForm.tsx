@@ -83,16 +83,16 @@ const ContactForm: React.FC = () => {
     <animated.div style={formAnimation} className="max-w-2xl mx-auto">
       <div className="glass-effect rounded-2xl p-8">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-400 via-secondary-400 to-accent-400 flex items-center justify-center">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-icon-gradient flex items-center justify-center">
             <Mail size={24} className="text-white" />
           </div>
-          <h2 className="text-3xl font-display font-bold gradient-text mb-2">
+          <h2 className="text-3xl font-display font-bold text-panel-header-gradient mb-2">
             Get In Touch
           </h2>
-          <p className="text-neutral-600 font-elegant">
+          <p className="text-content-secondary font-elegant">
             Have a project in mind? Let's create something amazing together.
           </p>
-          <p className="text-sm text-neutral-500 font-elegant mt-2">
+          <p className="text-sm text-content-muted font-elegant mt-2">
             Click the Email button above to scroll here, or fill out the form below.
           </p>
         </div>
@@ -100,7 +100,7 @@ const ContactForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-elegant font-medium text-neutral-700 mb-2">
+              <label htmlFor="name" className="block text-sm font-elegant font-medium text-content-primary mb-2">
                 Name *
               </label>
               <input
@@ -116,7 +116,7 @@ const ContactForm: React.FC = () => {
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-elegant font-medium text-neutral-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-elegant font-medium text-content-primary mb-2">
                 Email *
               </label>
               <input
@@ -133,7 +133,7 @@ const ContactForm: React.FC = () => {
           </div>
 
           <div>
-            <label htmlFor="subject" className="block text-sm font-elegant font-medium text-neutral-700 mb-2">
+            <label htmlFor="subject" className="block text-sm font-elegant font-medium text-content-primary mb-2">
               Subject
             </label>
             <input
@@ -148,7 +148,7 @@ const ContactForm: React.FC = () => {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-elegant font-medium text-neutral-700 mb-2">
+            <label htmlFor="message" className="block text-sm font-elegant font-medium text-content-primary mb-2">
               Message *
             </label>
             <textarea
@@ -184,8 +184,8 @@ const ContactForm: React.FC = () => {
             disabled={!isFormValid || status.type === 'loading'}
             className={`w-full flex items-center justify-center space-x-2 px-6 py-4 rounded-lg font-elegant font-medium transition-all duration-200 ${
               isFormValid && status.type !== 'loading'
-                ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600 hover:scale-105 shadow-lg hover:shadow-xl'
-                : 'bg-neutral-200 text-neutral-500 cursor-not-allowed'
+                ? 'bg-gradient-to-r from-interactive-primary to-interactive-secondary text-white hover:from-interactive-primary hover:to-interactive-secondary hover:scale-105 shadow-lg hover:shadow-xl'
+                : 'bg-surface-accent text-content-muted cursor-not-allowed'
             }`}
           >
             <Send size={20} />

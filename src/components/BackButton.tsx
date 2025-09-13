@@ -18,7 +18,7 @@ const BackButton: React.FC = () => {
     >
       <ArrowLeft 
         size={20} 
-        className="text-primary-500"
+        className="text-interactive-primary"
         style={{
           filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.4))'
         }}
