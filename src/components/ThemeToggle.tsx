@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { useTheme } from '../contexts/ThemeContext';
-import { Sun, Moon, Sparkles, Crown } from 'lucide-react';
+import { Sun, Moon, Crown, Palette, Waves } from 'lucide-react';
 
 const ThemeToggle: React.FC = () => {
   const { theme, setTheme, toggleTheme } = useTheme();
@@ -18,10 +18,12 @@ const ThemeToggle: React.FC = () => {
         return Sun;
       case 'dark':
         return Moon;
-      case 'dreamy':
-        return Sparkles;
-      case 'regal':
+      case 'fun':
+        return Palette;
+      case 'majestic':
         return Crown;
+      case 'dreamy':
+        return Waves;
       default:
         return Sun;
     }
@@ -33,10 +35,12 @@ const ThemeToggle: React.FC = () => {
         return 'Light';
       case 'dark':
         return 'Dark';
+      case 'fun':
+        return 'Fun';
+      case 'majestic':
+        return 'Majestic';
       case 'dreamy':
         return 'Dreamy';
-      case 'regal':
-        return 'Regal';
       default:
         return 'Light';
     }
@@ -61,14 +65,15 @@ const ThemeToggle: React.FC = () => {
 
         {/* Theme Selector Dropdown */}
         <div className="flex flex-col space-y-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          {(['light', 'dark', 'dreamy', 'regal'] as const).map((themeOption) => {
+          {(['light', 'dark', 'fun', 'majestic', 'dreamy'] as const).map((themeOption) => {
             const isActive = theme === themeOption;
             const getIcon = () => {
               switch (themeOption) {
                 case 'light': return Sun;
                 case 'dark': return Moon;
-                case 'dreamy': return Sparkles;
-                case 'regal': return Crown;
+                case 'fun': return Palette;
+                case 'majestic': return Crown;
+                case 'dreamy': return Waves;
               }
             };
             const Icon = getIcon();

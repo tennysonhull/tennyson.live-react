@@ -15,7 +15,7 @@ const MyStory = () => {
     >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold gradient-text mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-semibold gradient-text mb-4" style={{ lineHeight: '1.5' }}>
             My Story
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 mx-auto rounded-full"></div>

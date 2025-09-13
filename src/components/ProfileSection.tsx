@@ -73,7 +73,7 @@ const ProfileSection: React.FC = () => {
         </animated.div>
 
         <animated.div style={textAnimation} className="space-y-6">
-          <h1 className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4">
+          <h1 className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4" style={{ lineHeight: '1.5' }}>
             Tennyson Hull
           </h1>
           

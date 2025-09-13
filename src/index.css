@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Trade+Winds&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,14 +19,8 @@ body {
   text-shadow: 0 0 8px rgba(229, 229, 229, 0.3);
 }
 
-/* Regal theme styles */
-.regal body {
-  background: linear-gradient(to bottom right, #262626, #b45309, #262626);
-  color: #fef3c7;
-}
-
-/* Dreamy theme styles */
-.dreamy body {
+/* Fun theme styles (formerly Dreamy) */
+.fun body {
   background: 
     radial-gradient(circle at 20% 80%, rgba(255, 69, 0, 0.5) 0%, transparent 60%),
     radial-gradient(circle at 80% 20%, rgba(255, 140, 0, 0.3) 0%, transparent 50%),
@@ -46,6 +40,61 @@ body {
   text-shadow: 0 0 8px rgba(30, 41, 59, 0.3);
 }
 
+/* Majestic theme styles (formerly Regal) */
+.majestic body {
+  background: linear-gradient(to bottom right, #262626, #b45309, #262626);
+  color: #fef3c7;
+}
+
+/* New Dreamy theme styles - dark psychedelic blue-violet */
+.dreamy body {
+  background: 
+    /* Psychedelic diagonal pattern */
+    url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='psyche' x='0' y='0' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M0,0 L60,60 M0,20 L60,40 M0,40 L60,20 M20,0 L40,60 M40,0 L20,60' stroke='rgba(99, 102, 241, 0.15)' stroke-width='1'/%3E%3Ccircle cx='15' cy='15' r='2' fill='rgba(129, 140, 248, 0.2)'/%3E%3Ccircle cx='45' cy='45' r='3' fill='rgba(217, 70, 239, 0.15)'/%3E%3Ccircle cx='30' cy='10' r='1.5' fill='rgba(99, 102, 241, 0.25)'/%3E%3Ccircle cx='10' cy='50' r='2.5' fill='rgba(129, 140, 248, 0.18)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='60' height='60' fill='url(%23psyche)'/%3E%3C/svg%3E"),
+    /* Vibrant radial gradients for depth */
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(217, 70, 239, 0.3) 0%, transparent 70%),
+    radial-gradient(circle at 40% 60%, rgba(129, 140, 248, 0.35) 0%, transparent 65%),
+    radial-gradient(circle at 60% 40%, rgba(99, 102, 241, 0.25) 0%, transparent 55%),
+    radial-gradient(circle at 10% 90%, rgba(217, 70, 239, 0.2) 0%, transparent 75%),
+    radial-gradient(circle at 90% 10%, rgba(129, 140, 248, 0.3) 0%, transparent 60%),
+    /* Base dark gradient */
+    linear-gradient(135deg, 
+      rgba(15, 15, 35, 0.98) 0%, 
+      rgba(30, 27, 75, 0.95) 25%, 
+      rgba(67, 56, 202, 0.9) 50%, 
+      rgba(55, 48, 163, 0.95) 75%, 
+      rgba(15, 15, 35, 0.98) 100%
+    );
+  color: #f0f4ff;
+  text-shadow: 0 0 15px rgba(240, 244, 255, 0.6), 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+/* Dreamy theme specific enhancements */
+.dreamy .gradient-text {
+  background: linear-gradient(to right, #f0f4ff, #e0e7ff, #c7d2fe, #a5b4fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(240, 244, 255, 0.8), 0 0 40px rgba(99, 102, 241, 0.5), 0 0 60px rgba(129, 140, 248, 0.3);
+}
+
+.dreamy .glass-effect {
+  background: rgba(15, 15, 35, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3), 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.dreamy h1, .dreamy h2, .dreamy h3 {
+  text-shadow: 0 0 20px rgba(240, 244, 255, 0.7), 0 0 40px rgba(99, 102, 241, 0.4), 0 0 60px rgba(129, 140, 248, 0.2);
+}
+
+.dreamy .text-neutral-600, .dreamy .text-neutral-700, .dreamy .text-neutral-800 {
+  color: #e0e7ff !important;
+  text-shadow: 0 0 10px rgba(224, 231, 255, 0.5);
+}
+
 /* Notification colors for each theme */
 :root {
   --notification-bg: #fef3c7;
@@ -63,7 +112,15 @@ body {
   --card-header-glow: 0 0 12px rgba(229, 231, 235, 0.4);
 }
 
-.regal {
+.fun {
+  --notification-bg: #fff8f0;
+  --notification-border: #ff6900;
+  --notification-text: #cc3300;
+  --card-header-text: #1e293b;
+  --card-header-glow: 0 0 8px rgba(30, 41, 59, 0.3);
+}
+
+.majestic {
   --notification-bg: #fef3c7;
   --notification-border: #f59e0b;
   --notification-text: #92400e;
@@ -72,11 +129,11 @@ body {
 }
 
 .dreamy {
-  --notification-bg: #fff8f0;
-  --notification-border: #ff6900;
-  --notification-text: #cc3300;
-  --card-header-text: #1e293b;
-  --card-header-glow: 0 0 8px rgba(30, 41, 59, 0.3);
+  --notification-bg: #1a0b2e;
+  --notification-border: #8b45ff;
+  --notification-text: #e0e7ff;
+  --card-header-text: #c7d2fe;
+  --card-header-glow: 0 0 15px rgba(199, 210, 254, 0.5);
 }
 
 /* Component styles */
@@ -111,14 +168,14 @@ body {
 }
 
 /* Regal theme components */
-.regal .glass-effect {
+.majestic .glass-effect {
   background: rgba(38, 38, 38, 0.4);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(180, 83, 9, 0.4);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
 }
 
-.regal .gradient-text {
+.majestic .gradient-text {
   background: linear-gradient(to right, #fde68a, #fcd34d, #fbbf24);
   background-clip: text;
   -webkit-background-clip: text;
@@ -173,61 +230,61 @@ body {
 }
 
 /* Regal theme text overrides */
-.regal .text-primary-600 {
+.majestic .text-primary-600 {
   color: #fde68a;
   text-shadow: 0 0 8px rgba(253, 230, 138, 0.4);
 }
 
-.regal .text-primary-400 {
+.majestic .text-primary-400 {
   color: #fcd34d;
   text-shadow: 0 0 8px rgba(252, 211, 77, 0.4);
 }
 
-.regal .bg-primary-200\/20 {
+.majestic .bg-primary-200\/20 {
   background-color: rgba(253, 230, 138, 0.2);
 }
 
-.regal .bg-primary-800\/20 {
+.majestic .bg-primary-800\/20 {
   background-color: rgba(180, 83, 9, 0.2);
 }
 
-.regal .bg-secondary-200\/20 {
+.majestic .bg-secondary-200\/20 {
   background-color: rgba(253, 230, 138, 0.2);
 }
 
-.regal .bg-secondary-800\/20 {
+.majestic .bg-secondary-800\/20 {
   background-color: rgba(180, 83, 9, 0.2);
 }
 
-.regal .bg-accent-200\/10 {
+.majestic .bg-accent-200\/10 {
   background-color: rgba(253, 230, 138, 0.1);
 }
 
-.regal .bg-accent-800\/10 {
+.majestic .bg-accent-800\/10 {
   background-color: rgba(180, 83, 9, 0.1);
 }
 
-.regal .from-primary-400 {
+.majestic .from-primary-400 {
   --tw-gradient-from: #fbbf24;
 }
 
-.regal .via-secondary-400 {
+.majestic .via-secondary-400 {
   --tw-gradient-via: #fbbf24;
 }
 
-.regal .to-accent-400 {
+.majestic .to-accent-400 {
   --tw-gradient-to: #fbbf24;
 }
 
-.regal .from-primary-600 {
+.majestic .from-primary-600 {
   --tw-gradient-from: #d97706;
 }
 
-.regal .via-secondary-600 {
+.majestic .via-secondary-600 {
   --tw-gradient-via: #d97706;
 }
 
-.regal .to-accent-600 {
+.majestic .to-accent-600 {
   --tw-gradient-to: #d97706;
 }
 
@@ -329,21 +386,21 @@ body {
   color: #9ca3af;
 }
 
-.regal input,
-.regal textarea {
+.majestic input,
+.majestic textarea {
   background-color: rgba(45, 45, 45, 0.3);
   border-color: #b45309;
   color: #fef3c7;
 }
 
-.regal input:focus,
-.regal textarea:focus {
+.majestic input:focus,
+.majestic textarea:focus {
   border-color: #fbbf24;
   box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
 }
 
-.regal input::placeholder,
-.regal textarea::placeholder {
+.majestic input::placeholder,
+.majestic textarea::placeholder {
   color: #fcd34d;
 }
 
@@ -352,43 +409,43 @@ body {
   color: #e5e5e5;
 }
 
-.regal .text-neutral-700 {
+.majestic .text-neutral-700 {
   color: #fde68a;
 }
 
 /* Regal theme neutral text overrides for better contrast */
-.regal .text-neutral-600 {
+.majestic .text-neutral-600 {
   color: #fef3c7;
   text-shadow: 0 0 8px rgba(254, 243, 199, 0.4);
 }
 
-.regal .text-neutral-500 {
+.majestic .text-neutral-500 {
   color: #fde68a;
   text-shadow: 0 0 8px rgba(253, 230, 138, 0.4);
 }
 
-.regal .text-neutral-400 {
+.majestic .text-neutral-400 {
   color: #fcd34d;
   text-shadow: 0 0 8px rgba(252, 211, 77, 0.4);
 }
 
-.regal .text-neutral-300 {
+.majestic .text-neutral-300 {
   color: #fbbf24;
   text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
 }
 
-.regal .text-neutral-200 {
+.majestic .text-neutral-200 {
   color: #f59e0b;
   text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
 }
 
 /* Regal theme link header styling for better contrast */
-.regal .text-neutral-800 {
+.majestic .text-neutral-800 {
   color: #fef3c7;
   text-shadow: 0 0 8px rgba(254, 243, 199, 0.4);
 }
 
-.regal .group-hover\/link\:text-primary-600:hover {
+.majestic .group-hover\/link\:text-primary-600:hover {
   color: #fbbf24 !important;
   text-shadow: 0 0 12px rgba(251, 191, 36, 0.6);
 }

@@ -57,8 +57,8 @@ module.exports = {
           800: '#262626',
           900: '#171717',
         },
-        // Regal theme - Gold and dark with oriental touches
-        regal: {
+        // Majestic theme - Gold and dark with oriental touches (formerly Regal)
+        majestic: {
           50: '#fffbeb',
           100: '#fef3c7',
           200: '#fde68a',
@@ -70,8 +70,8 @@ module.exports = {
           800: '#92400e',
           900: '#78350f',
         },
-        // Dreamy theme - Sunset/marmalade/blood-orange with high saturation
-        dreamy: {
+        // Fun theme - Sunset/marmalade/blood-orange with high saturation (formerly Dreamy)
+        fun: {
           50: '#fff8f0',
           100: '#ffe8d1',
           200: '#ffd1a3',
@@ -83,8 +83,8 @@ module.exports = {
           800: '#b31a00',
           900: '#990000',
         },
-        // Dreamy theme secondary colors (consolidated from dreamyBlue and dreamyPurple)
-        dreamySecondary: {
+        // Fun theme secondary colors (original dreamySecondary)
+        funSecondary: {
           50: '#f0f8ff',
           100: '#e0f0ff',
           200: '#c1e1ff',
@@ -96,7 +96,7 @@ module.exports = {
           800: '#004db3',
           900: '#004099',
         },
-        dreamyAccent: {
+        funAccent: {
           50: '#f8f0ff',
           100: '#f0e0ff',
           200: '#e1c1ff',
@@ -108,19 +108,59 @@ module.exports = {
           800: '#4d00b3',
           900: '#400099',
         },
+        // New Dreamy theme - Dark rich hues of blue-violet
+        dreamy: {
+          50: '#f0f4ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#1e1b4b',
+        },
+        // Dreamy theme secondary colors - Deep vibrant blues
+        dreamySecondary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+        },
+        dreamyAccent: {
+          50: '#fdf4ff',
+          100: '#fae8ff',
+          200: '#f5d0fe',
+          300: '#f0abfc',
+          400: '#e879f9',
+          500: '#d946ef',
+          600: '#c026d3',
+          700: '#a21caf',
+          800: '#86198f',
+          900: '#701a75',
+        },
         // Theme-specific text colors
         text: {
           light: '#1e40af', // Deep blue
           dark: '#dbeafe', // Light blue
-          regal: '#fef3c7', // Keep gold for regal
-          dreamy: '#1e3a8a', // Deep navy blue
+          fun: '#1e293b', // Dark slate for Fun theme
+          majestic: '#fef3c7', // Gold for Majestic theme
+          dreamy: '#f0f4ff', // Very light blue-violet for new Dreamy theme
         },
         // Theme-specific background colors
         bg: {
           light: '#f0f9ff',
           dark: '#0c4a6e',
-          regal: '#a16207',
-          dreamy: '#fff8f0',
+          fun: '#fff8f0',
+          majestic: '#a16207',
+          dreamy: '#0f0f23',
         },
         // Theme-specific notification colors
         notification: {
@@ -134,15 +174,20 @@ module.exports = {
             border: '#3b82f6', // Blue border
             text: '#dbeafe', // Light blue text
           },
-          regal: {
+          fun: {
+            bg: '#fff8f0', // Light orange background
+            border: '#ff6900', // Orange border
+            text: '#cc3300', // Dark orange text
+          },
+          majestic: {
             bg: '#fef3c7', // Light gold background
             border: '#f59e0b', // Gold border
             text: '#92400e', // Dark gold text
           },
           dreamy: {
-            bg: '#fff8f0', // Light orange background
-            border: '#ff6900', // Orange border
-            text: '#cc3300', // Dark orange text
+            bg: '#0f0f23', // Very dark blue-violet background
+            border: '#6366f1', // Indigo border
+            text: '#f0f4ff', // Very light blue-violet text
           },
         },
         // Theme-specific form colors
@@ -161,7 +206,14 @@ module.exports = {
             focus: '#60a5fa', // primary-400
             placeholder: '#9ca3af', // neutral-400
           },
-          regal: {
+          fun: {
+            label: '#1e293b', // slate-800
+            input: '#ffffff',
+            border: '#d1d5db', // neutral-300
+            focus: '#3b82f6', // primary-500
+            placeholder: '#9ca3af', // neutral-400
+          },
+          majestic: {
             label: '#fde68a', // regal-200
             input: 'rgba(45, 45, 45, 0.3)',
             border: '#b45309', // regal-700
@@ -169,18 +221,18 @@ module.exports = {
             placeholder: '#fcd34d', // regal-300
           },
           dreamy: {
-            label: '#1e293b', // slate-800
-            input: '#ffffff',
-            border: '#d1d5db', // neutral-300
-            focus: '#3b82f6', // primary-500
-            placeholder: '#9ca3af', // neutral-400
+            label: '#e0e7ff', // indigo-100
+            input: 'rgba(15, 15, 35, 0.4)',
+            border: '#6366f1', // dreamy-500
+            focus: '#818cf8', // dreamy-400
+            placeholder: '#a5b4fc', // dreamy-300
           }
         }
       },
       fontFamily: {
         'elegant': ['Inter', 'system-ui', 'sans-serif'],
         'futuristic': ['JetBrains Mono', 'monospace'],
-        'display': ['Playfair Display', 'serif'],
+        'display': ['Trade Winds', 'cursive'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

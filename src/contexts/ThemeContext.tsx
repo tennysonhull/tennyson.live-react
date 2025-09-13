@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-export type Theme = 'light' | 'dark' | 'dreamy' | 'regal';
+export type Theme = 'light' | 'dark' | 'fun' | 'majestic' | 'dreamy';
 
 interface ThemeContextType {
   theme: Theme;
@@ -26,7 +26,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     // Check localStorage first, then system preference
     const savedTheme = localStorage.getItem('theme') as Theme;
-    if (savedTheme && ['light', 'dark', 'dreamy', 'regal'].includes(savedTheme)) {
+    if (savedTheme && ['light', 'dark', 'fun', 'majestic', 'dreamy'].includes(savedTheme)) {
       return savedTheme;
     }
     
@@ -38,7 +38,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const root = document.documentElement;
     
     // Remove all theme classes
-    root.classList.remove('light', 'dark', 'dreamy', 'regal');
+    root.classList.remove('light', 'dark', 'fun', 'majestic', 'dreamy');
     
     // Add current theme class
     root.classList.add(theme);
@@ -52,15 +52,16 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       const colors = {
         light: '#f0f9ff',
         dark: '#0c4a6e',
-        dreamy: '#fdf2f8',
-        regal: '#a16207'
+        fun: '#fdf2f8',
+        majestic: '#a16207',
+        dreamy: '#1a0b2e'
       };
       metaThemeColor.setAttribute('content', colors[theme]);
     }
   }, [theme]);
 
   const toggleTheme = () => {
-    const themes: Theme[] = ['light', 'dark', 'dreamy', 'regal'];
+    const themes: Theme[] = ['light', 'dark', 'fun', 'majestic', 'dreamy'];
     const currentIndex = themes.indexOf(theme);
     const nextIndex = (currentIndex + 1) % themes.length;
     setTheme(themes[nextIndex]);
