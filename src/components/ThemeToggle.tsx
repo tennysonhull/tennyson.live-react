@@ -56,6 +56,7 @@ const ThemeToggle: React.FC = () => {
           onClick={toggleTheme}
           className="group flex items-center space-x-2 px-4 py-2 rounded-full glass-effect hover:scale-105 transition-all duration-300"
           aria-label={`Switch to next theme. Current: ${getThemeLabel()}`}
+          data-track="theme-toggle"
         >
           <IconComponent size={18} className="text-content-secondary group-hover:text-interactive-primary transition-colors" />
           <span className="font-elegant font-medium text-sm text-content-secondary group-hover:text-interactive-primary transition-colors">

@@ -193,6 +193,7 @@ src/
 ### Core Documentation
 - **[Architecture Guide](docs/ARCHITECTURE.md)** - System architecture and design decisions
 - **[Deployment Guide](docs/DEPLOYMENT.md)** - Multiple deployment strategies and platforms
+- **[Analytics & Tracking Guide](docs/ANALYTICS_TRACKING.md)** - Comprehensive Google Analytics implementation and tracking details
 - **[Contributing](docs/CONTRIBUTING.md)** - Simple guide for forking and contributing
 - **[Roadmap](docs/ROADMAP.md)** - Future development plans and milestones
 - **[Changelog](docs/CHANGELOG.md)** - Version history and release notes

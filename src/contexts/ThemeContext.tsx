@@ -64,7 +64,13 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const themes: Theme[] = ['light', 'dark', 'fun', 'majestic', 'dreamy'];
     const currentIndex = themes.indexOf(theme);
     const nextIndex = (currentIndex + 1) % themes.length;
-    setTheme(themes[nextIndex]);
+    const newTheme = themes[nextIndex];
+    setTheme(newTheme);
+    
+    // Track theme change in Google Analytics
+    if (typeof window !== 'undefined' && window.trackThemeChange) {
+      window.trackThemeChange(newTheme);
+    }
   };
 
   return (

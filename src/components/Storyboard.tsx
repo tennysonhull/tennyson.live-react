@@ -252,6 +252,7 @@ const Storyboard: React.FC = () => {
               to="/accelerate"
               onClick={() => setDirection('left')}
               className="group/btn flex items-center space-x-2 px-6 py-3 rounded-full bg-support-button-gradient text-white font-elegant font-medium hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+              data-track="support-button"
             >
               <span>Accelerate My Journey</span>
               <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />

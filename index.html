@@ -42,21 +42,66 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      
+      // Enhanced GA4 configuration
       gtag('config', 'G-PS2N7J0EZY', {
         page_title: document.title,
-        page_location: window.location.href
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        custom_map: {
+          'custom_parameter_1': 'theme',
+          'custom_parameter_2': 'interaction_type',
+          'custom_parameter_3': 'section'
+        }
       });
 
-      // Track route changes for SPA
+      // Track initial page load
+      gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        theme: 'unknown', // Will be updated when theme is detected
+        section: getPageSection(window.location.pathname)
+      });
+
+      // Helper function to determine page section
+      function getPageSection(pathname) {
+        if (pathname === '/') return 'home';
+        if (pathname === '/uplift') return 'uplift';
+        if (pathname === '/accelerate') return 'accelerate';
+        return 'unknown';
+      }
+
+      // Enhanced route tracking for SPA
       let currentPath = window.location.pathname;
+      let routeChangeTimeout;
+      
       const observer = new MutationObserver(() => {
         if (window.location.pathname !== currentPath) {
-          currentPath = window.location.pathname;
-          gtag('config', 'G-PS2N7J0EZY', {
-            page_title: document.title,
-            page_location: window.location.href,
-            page_path: window.location.pathname
-          });
+          clearTimeout(routeChangeTimeout);
+          routeChangeTimeout = setTimeout(() => {
+            const newPath = window.location.pathname;
+            const timeOnPage = Date.now() - (window.lastRouteChange || Date.now());
+            
+            // Track page exit
+            gtag('event', 'page_exit', {
+              page_path: currentPath,
+              time_on_page: Math.round(timeOnPage / 1000),
+              section: getPageSection(currentPath)
+            });
+            
+            // Track new page view
+            gtag('event', 'page_view', {
+              page_title: document.title,
+              page_location: window.location.href,
+              page_path: newPath,
+              section: getPageSection(newPath),
+              previous_page: currentPath
+            });
+            
+            currentPath = newPath;
+            window.lastRouteChange = Date.now();
+          }, 100); // Small delay to ensure DOM is updated
         }
       });
       
@@ -64,46 +109,170 @@
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
           observer.observe(document.body, { childList: true, subtree: true });
+          window.lastRouteChange = Date.now();
         });
       } else {
         observer.observe(document.body, { childList: true, subtree: true });
+        window.lastRouteChange = Date.now();
       }
 
-      // Track outbound links
+      // Enhanced click tracking
       document.addEventListener('click', function(e) {
         const link = e.target.closest('a');
-        if (link && link.href) {
-          const url = new URL(link.href);
+        const button = e.target.closest('button');
+        const element = link || button;
+        
+        if (element) {
+          const url = element.href ? new URL(element.href) : null;
           const currentDomain = window.location.hostname;
+          const currentSection = getPageSection(window.location.pathname);
           
           // Track outbound links
-          if (url.hostname !== currentDomain) {
+          if (url && url.hostname !== currentDomain) {
             gtag('event', 'click', {
-              event_category: 'outbound',
-              event_label: link.href,
+              event_category: 'outbound_link',
+              event_label: url.href,
+              link_domain: url.hostname,
+              section: currentSection,
               transport_type: 'beacon'
             });
           }
           
           // Track internal navigation
-          if (url.hostname === currentDomain && url.pathname !== window.location.pathname) {
-            gtag('event', 'page_view', {
-              page_title: document.title,
-              page_location: link.href,
-              page_path: url.pathname
+          if (url && url.hostname === currentDomain && url.pathname !== window.location.pathname) {
+            gtag('event', 'internal_navigation', {
+              event_category: 'navigation',
+              event_label: url.pathname,
+              from_section: currentSection,
+              to_section: getPageSection(url.pathname),
+              transport_type: 'beacon'
+            });
+          }
+          
+          // Track button clicks
+          if (button) {
+            const buttonText = button.textContent?.trim() || 'unknown';
+            const buttonClass = button.className || '';
+            
+            gtag('event', 'button_click', {
+              event_category: 'interaction',
+              event_label: buttonText,
+              button_type: buttonClass.includes('support') ? 'support' : 
+                          buttonClass.includes('theme') ? 'theme' : 'general',
+              section: currentSection
+            });
+          }
+          
+          // Track specific interactions
+          if (element.closest('[data-track="theme-toggle"]')) {
+            gtag('event', 'theme_change', {
+              event_category: 'customization',
+              section: currentSection
+            });
+          }
+          
+          if (element.closest('[data-track="contact-form"]')) {
+            gtag('event', 'contact_interaction', {
+              event_category: 'engagement',
+              section: currentSection
+            });
+          }
+          
+          if (element.closest('[data-track="support-button"]')) {
+            gtag('event', 'support_click', {
+              event_category: 'conversion',
+              section: currentSection
             });
           }
         }
       });
 
+      // Track scroll depth
+      let maxScrollDepth = 0;
+      let scrollDepthTimeout;
+      
+      window.addEventListener('scroll', function() {
+        clearTimeout(scrollDepthTimeout);
+        scrollDepthTimeout = setTimeout(() => {
+          const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+          
+          if (scrollDepth > maxScrollDepth) {
+            maxScrollDepth = scrollDepth;
+            
+            // Track milestone scroll depths
+            if (scrollDepth >= 25 && maxScrollDepth < 25) {
+              gtag('event', 'scroll', {
+                event_category: 'engagement',
+                event_label: '25%',
+                section: getPageSection(window.location.pathname)
+              });
+            } else if (scrollDepth >= 50 && maxScrollDepth < 50) {
+              gtag('event', 'scroll', {
+                event_category: 'engagement',
+                event_label: '50%',
+                section: getPageSection(window.location.pathname)
+              });
+            } else if (scrollDepth >= 75 && maxScrollDepth < 75) {
+              gtag('event', 'scroll', {
+                event_category: 'engagement',
+                event_label: '75%',
+                section: getPageSection(window.location.pathname)
+              });
+            } else if (scrollDepth >= 90 && maxScrollDepth < 90) {
+              gtag('event', 'scroll', {
+                event_category: 'engagement',
+                event_label: '90%',
+                section: getPageSection(window.location.pathname)
+              });
+            }
+          }
+        }, 100);
+      });
+
+      // Track form interactions
+      document.addEventListener('submit', function(e) {
+        const form = e.target;
+        if (form.tagName === 'FORM') {
+          gtag('event', 'form_submit', {
+            event_category: 'engagement',
+            form_id: form.id || 'unknown',
+            section: getPageSection(window.location.pathname)
+          });
+        }
+      });
+
       // Track popstate events (back/forward navigation)
       window.addEventListener('popstate', function() {
-        gtag('config', 'G-PS2N7J0EZY', {
+        gtag('event', 'page_view', {
           page_title: document.title,
           page_location: window.location.href,
-          page_path: window.location.pathname
+          page_path: window.location.pathname,
+          section: getPageSection(window.location.pathname),
+          navigation_type: 'browser_back_forward'
         });
       });
+
+      // Track page visibility changes
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          gtag('event', 'page_hide', {
+            section: getPageSection(window.location.pathname)
+          });
+        } else {
+          gtag('event', 'page_show', {
+            section: getPageSection(window.location.pathname)
+          });
+        }
+      });
+
+      // Track theme changes (will be called from React components)
+      window.trackThemeChange = function(theme) {
+        gtag('event', 'theme_change', {
+          event_category: 'customization',
+          event_label: theme,
+          section: getPageSection(window.location.pathname)
+        });
+      };
     </script>
     
     <title>Tennyson Hull - Creative Developer & Digital Architect</title>

@@ -105,6 +105,7 @@ const AcceleratePage: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group/btn inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-support-button-gradient text-white font-elegant font-medium hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                data-track="support-button"
               >
                 <Heart size={20} className="group-hover/btn:scale-110 transition-transform" />
                 <span className="text-lg">Walk With Me</span>
