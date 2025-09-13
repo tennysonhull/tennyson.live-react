@@ -104,7 +104,7 @@ const AcceleratePage: React.FC = () => {
                 href="https://buy.stripe.com/3cI5kD8Oq9Mm7V01hP5wI02"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/btn inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 to-orange-500 text-white font-elegant font-medium hover:from-pink-600 hover:to-orange-600 hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="group/btn inline-flex items-center space-x-3 px-8 py-4 rounded-full bg-support-button-gradient text-white font-elegant font-medium hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 <Heart size={20} className="group-hover/btn:scale-110 transition-transform" />
                 <span className="text-lg">Walk With Me</span>

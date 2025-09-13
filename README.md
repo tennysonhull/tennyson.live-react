@@ -1,15 +1,18 @@
 # Tennyson Live - Personal Profile Site
 
-An elegant, regal, and flowy personal profile website built with React, TypeScript, and Tailwind CSS v4. Features a dreamy blue/green and peachy color scheme with smooth animations and a modern theme system.
+An elegant, regal, and flowy personal profile website built with React, TypeScript, and Tailwind CSS v3.4. Features a comprehensive semantic theme system with 5 beautiful themes, smooth animations, and a modern glass-morphism design.
 
 ## ✨ Features
 
-- **Elegant Design**: Dreamy blue/green and peachy color scheme with regal typography
-- **Theme System**: Light, dark, dreamy, and regal themes with smooth transitions
+- **Comprehensive Theme System**: 5 beautiful themes (Light, Dark, Fun, Majestic, Dreamy) with semantic color variables
+- **Glass-morphism Design**: Modern frosted glass effects with backdrop blur and transparency
+- **Semantic Color System**: Universal utility classes that work across all themes
+- **Multi-page Navigation**: Home, Uplift, and Accelerate pages with smooth transitions
 - **Static Storyboard**: Featured projects, community empowerment, and support sections
+- **Contact Form**: Formspree integration with spam protection
 - **Smooth Animations**: React Spring animations throughout the site
 - **Responsive Design**: Beautiful on all devices
-- **Google Analytics**: Built-in analytics integration
+- **Google Analytics**: Built-in analytics integration with SPA tracking
 - **Docker Support**: Easy deployment with Docker and Docker Compose
 - **TypeScript**: Full type safety and better development experience
 
@@ -107,11 +110,12 @@ docker-compose up --build
 
 ### Themes
 
-The site includes four built-in themes:
-- **Light**: Clean and minimal
-- **Dark**: Elegant dark mode
-- **Dreamy**: Soft, ethereal colors
-- **Regal**: Rich, sophisticated palette
+The site includes five built-in themes with semantic color systems:
+- **Light**: Clean and minimal with blue/green accents
+- **Dark**: Elegant dark mode with bright accents
+- **Fun**: Vibrant orange/blue/purple with floating elements
+- **Majestic**: Rich gold and dark palette with oriental aesthetic
+- **Dreamy**: Dark blue-violet with frosted glass effects and psychedelic background
 
 ### Storyboard
 
@@ -120,17 +124,34 @@ The storyboard system allows you to add:
 - **Image Blocks**: Display images with captions
 - **Link Blocks**: Collections of external links
 
-### Colors
+### Semantic Color System
 
-Customize colors in `tailwind.config.js`:
-```javascript
-colors: {
-  primary: { /* Blue tones */ },
-  secondary: { /* Green tones */ },
-  accent: { /* Peachy tones */ },
-  neutral: { /* Grayscale */ }
-}
+The site uses a comprehensive semantic color system with CSS variables:
+
+```css
+/* Content colors */
+.text-content-primary    /* Main text color */
+.text-content-secondary  /* Secondary text color */
+.text-content-muted      /* Muted text color */
+.text-content-subtle     /* Subtle text color */
+
+/* Surface colors */
+.bg-surface-primary      /* Primary background */
+.bg-surface-secondary    /* Secondary background */
+.bg-surface-accent       /* Accent background */
+
+/* Interactive colors */
+.text-interactive-primary    /* Primary interactive color */
+.hover:text-interactive-primary /* Hover states */
+.group-hover:text-interactive-primary /* Group hover states */
+
+/* Special gradients */
+.text-panel-header-gradient  /* Panel header gradients */
+.bg-icon-gradient           /* Icon background gradients */
+.bg-support-button-gradient /* Support button gradients */
 ```
+
+All colors automatically adapt to the current theme using CSS variables.
 
 ## 🛠️ Available Scripts
 
@@ -150,15 +171,21 @@ colors: {
 ```
 src/
 ├── components/          # React components
-│   ├── ProfileSection.tsx
-│   ├── Storyboard.tsx
-│   ├── ThemeToggle.tsx
-│   └── GoogleAnalytics.tsx
+│   ├── ProfileSection.tsx    # Profile picture and social links
+│   ├── MyStory.tsx          # Personal story section
+│   ├── Storyboard.tsx       # Featured projects and community
+│   ├── ContactForm.tsx      # Formspree contact form
+│   ├── ThemeToggle.tsx      # Theme switcher
+│   ├── BackButton.tsx       # Navigation back button
+│   ├── UpliftPage.tsx       # Community engagement page
+│   ├── AcceleratePage.tsx   # Support and commitment page
+│   └── GoogleAnalytics.tsx  # Analytics integration
 ├── contexts/           # React contexts
-│   └── ThemeContext.tsx
-├── App.tsx            # Main app component
+│   ├── ThemeContext.tsx     # Theme management
+│   └── PageTransitionContext.tsx # Page transition animations
+├── App.tsx            # Main app component with routing
 ├── main.tsx           # App entry point
-└── index.css          # Global styles
+└── index.css          # Global styles and theme variables
 ```
 
 ## 📚 Documentation
@@ -184,11 +211,12 @@ See our detailed [Roadmap](docs/ROADMAP.md) for comprehensive development plans.
 ### Upcoming Features
 - [ ] Content management system integration
 - [ ] Blog functionality
-- [ ] Contact form
 - [ ] More animation presets
 - [ ] Custom 3D graphics integration
 - [ ] Performance optimizations
 - [ ] PWA features
+- [ ] Additional theme variations
+- [ ] Advanced glass-morphism effects
 
 ## 📄 License
 

@@ -235,7 +235,7 @@ const Storyboard: React.FC = () => {
               border: '1px solid rgba(255, 182, 193, 0.2)'
             }}
           >
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 via-rose-400 to-orange-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="w-16 h-16 rounded-full bg-support-button-gradient flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <Heart size={24} className="text-white" />
             </div>
             

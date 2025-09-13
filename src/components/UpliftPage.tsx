@@ -250,9 +250,9 @@ const UpliftPage: React.FC = () => {
                         <span className="text-content-secondary">Progress</span>
                         <span className="text-content-primary font-medium">{item.raised} / {item.goal}</span>
                       </div>
-                      <div className="w-full bg-neutral-200 rounded-full h-2">
+                      <div className="w-full bg-surface-accent rounded-full h-2">
                         <div 
-                          className="bg-gradient-to-r from-pink-500 to-rose-500 h-2 rounded-full transition-all duration-500"
+                          className="bg-support-button-gradient h-2 rounded-full transition-all duration-500"
                           style={{ 
                             width: `${(parseFloat(item.raised.replace('$', '').replace(',', '')) / parseFloat(item.goal.replace('$', '').replace(',', ''))) * 100}%` 
                           }}
