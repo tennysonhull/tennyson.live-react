@@ -59,7 +59,7 @@ const AcceleratePage: React.FC = () => {
         <ThemeToggle />
         
         {/* Header */}
-        <animated.header style={fadeIn} className="py-16 px-4 text-center">
+        <animated.header style={fadeIn} className="py-16 px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto">
             
             <h1 className="text-4xl md:text-6xl font-display font-bold gradient-text mb-6">
@@ -69,7 +69,7 @@ const AcceleratePage: React.FC = () => {
         </animated.header>
 
         {/* Main Content */}
-        <section className="px-4 pb-16">
+        <section className="px-4 sm:px-6 lg:px-8 pb-16">
           <div className="max-w-4xl mx-auto">
             <animated.div 
               style={contentFadeIn}

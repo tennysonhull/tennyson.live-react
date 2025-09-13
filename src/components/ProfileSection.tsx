@@ -50,8 +50,8 @@ const ProfileSection: React.FC = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-16">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-4xl mx-auto text-center w-full">
         <animated.div style={imageAnimation} className="mb-8">
           <div className="relative inline-block">
             {/* Profile Picture */}
@@ -73,21 +73,21 @@ const ProfileSection: React.FC = () => {
         </animated.div>
 
         <animated.div style={textAnimation} className="space-y-6">
-          <h1 className="text-5xl md:text-6xl font-display font-bold gradient-text mb-4" style={{ lineHeight: '1.5' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold gradient-text mb-4 px-2" style={{ lineHeight: '1.5' }}>
             Tennyson Hull
           </h1>
           
-          <p className="text-xl md:text-2xl text-content-secondary font-elegant font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-content-secondary font-elegant font-light max-w-2xl mx-auto leading-relaxed px-4">
             Creative Developer & Digital Architect
           </p>
           
-          <p className="text-lg text-content-muted font-elegant max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-content-muted font-elegant max-w-3xl mx-auto leading-relaxed px-4">
             Crafting elegant digital experiences with a passion for innovation and attention to detail. 
             Building the future, one pixel at a time.
           </p>
 
           {/* Social Links */}
-          <animated.div style={textAnimation} className="flex justify-center space-x-6 mt-8">
+          <animated.div style={textAnimation} className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6 mt-8 px-4">
             {socialLinks.map((link, index) => {
               const IconComponent = link.icon;
               
@@ -98,12 +98,12 @@ const ProfileSection: React.FC = () => {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group flex items-center space-x-2 px-4 py-2 rounded-full glass-effect transition-all duration-300 ${link.color} hover:scale-105`}
+                    className={`group flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-full glass-effect transition-all duration-300 ${link.color} hover:scale-105 w-full sm:w-auto justify-center sm:justify-start`}
                     style={{ animationDelay: `${800 + index * 100}ms` }}
                   >
-                    <IconComponent size={20} />
-                    <span className="font-elegant font-medium">{link.name}</span>
-                    <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <IconComponent size={18} className="sm:w-5 sm:h-5" />
+                    <span className="font-elegant font-medium text-sm sm:text-base">{link.name}</span>
+                    <ExternalLink size={12} className="opacity-0 group-hover:opacity-100 transition-opacity sm:w-3.5 sm:h-3.5" />
                   </a>
                 );
               } else {
@@ -111,12 +111,12 @@ const ProfileSection: React.FC = () => {
                   <button
                     key={link.name}
                     onClick={link.onClick}
-                    className={`group flex items-center space-x-2 px-4 py-2 rounded-full glass-effect transition-all duration-300 ${link.color} hover:scale-105`}
+                    className={`group flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-full glass-effect transition-all duration-300 ${link.color} hover:scale-105 w-full sm:w-auto justify-center sm:justify-start`}
                     style={{ animationDelay: `${800 + index * 100}ms` }}
                   >
-                    <IconComponent size={20} />
-                    <span className="font-elegant font-medium">{link.name}</span>
-                    <Mail size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <IconComponent size={18} className="sm:w-5 sm:h-5" />
+                    <span className="font-elegant font-medium text-sm sm:text-base">{link.name}</span>
+                    <Mail size={12} className="opacity-0 group-hover:opacity-100 transition-opacity sm:w-3.5 sm:h-3.5" />
                   </button>
                 );
               }

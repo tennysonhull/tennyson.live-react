@@ -121,7 +121,7 @@ const HomePage: React.FC = () => (
       <ProfileSection />
       <MyStory />
       <Storyboard />
-      <section id="contact-form" className="py-16 px-4">
+      <section id="contact-form" className="py-16 px-4 sm:px-6 lg:px-8">
         <ContactForm />
       </section>
     </div>
