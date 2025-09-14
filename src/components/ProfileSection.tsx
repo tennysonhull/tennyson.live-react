@@ -66,9 +66,20 @@ const ProfileSection: React.FC = () => {
             </div>
             
             {/* Floating decorative elements around profile */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-orange-400 rounded-full animate-float z-10" style={{ opacity: 0.8 }}></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full animate-float z-10" style={{ animationDelay: '1s', opacity: 0.8 }}></div>
-            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-green-500 rounded-full animate-float z-10" style={{ animationDelay: '2s', opacity: 0.8 }}></div>
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-orange-400 rounded-full animate-float z-10 shadow-orange-400/50" style={{ 
+              opacity: 0.8, 
+              boxShadow: '0 0 20px rgba(251, 146, 60, 0.6), 0 0 40px rgba(251, 146, 60, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1)' 
+            }}></div>
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full animate-float z-10 shadow-blue-500/50" style={{ 
+              animationDelay: '1s', 
+              opacity: 0.8, 
+              boxShadow: '0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1)' 
+            }}></div>
+            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-green-500 rounded-full animate-float z-10 shadow-green-500/50" style={{ 
+              animationDelay: '2s', 
+              opacity: 0.8, 
+              boxShadow: '0 0 20px rgba(34, 197, 94, 0.6), 0 0 40px rgba(34, 197, 94, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1)' 
+            }}></div>
           </div>
         </animated.div>
 
