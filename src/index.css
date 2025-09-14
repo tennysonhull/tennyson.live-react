@@ -279,6 +279,14 @@ body {
 .text-interactive-secondary { color: var(--interactive-secondary); }
 .text-interactive-accent { color: var(--interactive-accent); }
 
+.bg-interactive-primary { background-color: var(--interactive-primary); }
+.bg-interactive-secondary { background-color: var(--interactive-secondary); }
+.bg-interactive-accent { background-color: var(--interactive-accent); }
+
+.bg-interactive-primary\/80 { background-color: var(--interactive-primary); opacity: 0.8; }
+.bg-interactive-secondary\/80 { background-color: var(--interactive-secondary); opacity: 0.8; }
+.bg-interactive-accent\/80 { background-color: var(--interactive-accent); opacity: 0.8; }
+
 .hover\:text-interactive-primary:hover { color: var(--interactive-primary); }
 .hover\:text-interactive-secondary:hover { color: var(--interactive-secondary); }
 .hover\:text-interactive-accent:hover { color: var(--interactive-accent); }

@@ -66,9 +66,9 @@ const ProfileSection: React.FC = () => {
             </div>
             
             {/* Floating decorative elements around profile */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-interactive-accent/80 rounded-full animate-float"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-interactive-primary/80 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-interactive-secondary/80 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute -top-4 -right-4 w-8 h-8 bg-orange-400 rounded-full animate-float z-10" style={{ opacity: 0.8 }}></div>
+            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full animate-float z-10" style={{ animationDelay: '1s', opacity: 0.8 }}></div>
+            <div className="absolute top-1/2 -right-8 w-4 h-4 bg-green-500 rounded-full animate-float z-10" style={{ animationDelay: '2s', opacity: 0.8 }}></div>
           </div>
         </animated.div>
 
